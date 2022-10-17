@@ -1,4 +1,4 @@
-package lecture.p10core;
+package lecture.p11core;
 
 import org.springframework.stereotype.Component;
 

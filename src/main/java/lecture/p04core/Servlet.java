@@ -1,5 +1,12 @@
 package lecture.p04core;
 
-public class Servlet {
+import lombok.Getter;
+import lombok.Setter;
 
+public class Servlet {
+	@Setter
+	@Getter
+	private Dao dao;
+	
+	
 }

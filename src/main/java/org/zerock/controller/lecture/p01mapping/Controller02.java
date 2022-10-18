@@ -21,6 +21,10 @@ public class Controller02 {
 	}
 	
 	// "/ex02/sub03" 요청 경로에서 일하는 메소드 작성
+	@RequestMapping("sub03")
+	public void method3() {
+		System.out.println("ex02 method 3!!");
+	}
 }
 
 

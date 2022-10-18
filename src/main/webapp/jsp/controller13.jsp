@@ -16,6 +16,16 @@
 		이메일 : <input type="email" name="email" value="aa@daum.net">
 		<input type="submit" value="전송">
 	</form>
+	
+	<hr>
+	
+	<form action="${pageContext.request.contextPath }/ex13/sub02">
+		이름 : <input type="text" name="name"> <br>
+		나이 : <input type="number" name="age"> <br>
+		암호 : <input type="password" name="password"> <br>
+		이메일 : <input type="email" name="email"> <br>
+		<button>전송</button>
+	</form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -38,6 +38,12 @@ public class Controller12 {
 	// 위 3개의 @RequestParam value attribute 생략 가능
 	
 	
+	
+	// /ex12/sub04
+	@RequestMapping("sub04")
+	public void method4() {
+		System.out.println("method04 일함!!!!");
+	}
 }
 
 

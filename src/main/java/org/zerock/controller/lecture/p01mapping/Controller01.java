@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class Controller01 {
 	// servlet에서 주로했던 작업
-	// 1. 요청받고
+	// *1. 요청받고
 	// 2. request parameter 수집
 	// 3. request parameter 가공
 	// 4. business logic

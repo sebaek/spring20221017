@@ -44,6 +44,16 @@ public class Controller07 {
 	public void method6() {
 		System.out.println("6번 메소드");
 	}
+	
+	@GetMapping("sub04")
+	public void method7() {
+		System.out.println("7번 메소드");
+	}
+	
+	@GetMapping(path = "sub04", params = {"name", "age"})
+	public void method8() {
+		System.out.println("8번 메소드");
+	}
 }
 
 

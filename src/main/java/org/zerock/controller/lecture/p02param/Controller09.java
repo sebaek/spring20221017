@@ -58,9 +58,29 @@ public class Controller09 {
 	}
 	
 	// /ex09/sub08?num1=10&num2=20
-	
-	public void method8() {
+	@GetMapping("sub08")
+	public void method8(@RequestParam("num1") int num1,
+						@RequestParam("num2") int num2) {
 		System.out.println(num1 + num2); // 30
+	}
+	
+	// request param -> method param 바인딩 될 때
+	// 자동 형변환되는 type:
+	// String, 기본타입(primitive), wrapper
+	// /ex09/sub09?a=seoul&b=3.14&c=9.99&d=100&e=300
+	@GetMapping("sub09")
+	public void method9(@RequestParam("a") String a,
+						@RequestParam("b") double b,
+						@RequestParam("c") Double c,
+						@RequestParam("d") int d,
+						@RequestParam("e") Integer e) {
+		
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(c);
+		System.out.println(d);
+		System.out.println(e);
+		
 	}
 }
 

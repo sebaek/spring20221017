@@ -33,6 +33,14 @@ public class Controller04 {
 	// 요청 경로 : /ex04/sub04
 	// 요청 방식 : get, post 
 	// 일하는 메소드 작성
+	@RequestMapping(value = "sub04",
+			 method = {RequestMethod.GET, RequestMethod.POST})
+	public void method5() {
+		System.out.println("5번 메소드 일함");
+	}
+	
+	
+	
 }
 
 

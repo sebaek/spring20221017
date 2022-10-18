@@ -44,7 +44,10 @@ public class Controller10 {
 	
 	// ex10/sub05?address=korea     address -> korea
 	// ex10/sub05                   address -> seoul
-	
+	@GetMapping("sub05")
+	public void method6(@RequestParam(value = "address", defaultValue = "seoul") String address) {
+		System.out.println(address);
+	}
 }
 
 

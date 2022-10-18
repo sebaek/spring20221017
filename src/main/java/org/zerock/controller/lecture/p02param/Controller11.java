@@ -33,11 +33,14 @@ public class Controller11 {
 	}
 	
 	// /ex11/sub04?city=ny&age=90&name=donald
-	public void method4() {
+	@GetMapping("sub04")
+	public void method4(String city, int age, String name) {
 		System.out.println(city); // ny
 		System.out.println(age); // 90
 		System.out.println(name); // donald
 	}
+	
+	
 }
 
 

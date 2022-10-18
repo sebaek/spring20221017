@@ -32,7 +32,12 @@ public class Controller11 {
 		System.out.println(address);
 	}
 	
-	
+	// /ex11/sub04?city=ny&age=90&name=donald
+	public void method4() {
+		System.out.println(city); // ny
+		System.out.println(age); // 90
+		System.out.println(name); // donald
+	}
 }
 
 

@@ -22,7 +22,22 @@ public class Controller04 {
 	public void method3() {
 		System.out.println("메소드03 일!!!");
 	}
+	
+	@RequestMapping(
+			value = "sub03", 
+			method = {RequestMethod.GET, RequestMethod.POST})
+	public void method4() {
+		System.out.println("method4@@@@@@@");
+	}
+	
+	// 요청 경로 : /ex04/sub04
+	// 요청 방식 : get, post 
+	// 일하는 메소드 작성
 }
+
+
+
+
 
 
 

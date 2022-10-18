@@ -29,10 +29,17 @@ public class Controller05 {
 	
 	// get 방식 
 	// sub04 경로
-	
+	@GetMapping("sub04")
+	public void method4() {
+		System.out.println("method4 $$$$$$$");
+	}
 	
 	// post 방식
 	// sub05 경로
+	@PostMapping("sub05")
+	public void method5() {
+		System.out.println("method5 %%%%%%%%%%%");
+	}
 	
 }
 

@@ -34,6 +34,14 @@ public class Controller09 {
 	public void method4(@RequestParam("name") String p) {
 		System.out.println("name : " + p);
 	}
+	
+	// /ex09/sub05?name=donald&address=ny
+	@GetMapping("sub05")
+	public void method5(@RequestParam("name") String a
+						, @RequestParam("address") String b) {
+		System.out.println("name:" + a);
+		System.out.println("address:" + b);
+	}
 }
 
 

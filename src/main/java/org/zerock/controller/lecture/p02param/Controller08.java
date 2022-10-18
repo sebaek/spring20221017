@@ -41,7 +41,11 @@ public class Controller08 {
 	
 	// address 파라미터 (쿼리스트링)
 	// get parameter (address) 꺼내서 출력 코드 작성
-	
+	@GetMapping("sub03")
+	public void method3(HttpServletRequest req) {
+		String address = req.getParameter("address");
+		System.out.println("address : " + address);
+	}
 	
 	
 }

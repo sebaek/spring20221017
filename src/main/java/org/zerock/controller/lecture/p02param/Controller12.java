@@ -41,8 +41,17 @@ public class Controller12 {
 	
 	// /ex12/sub04
 	@RequestMapping("sub04")
-	public void method4() {
+	public void method4(String name, 
+			String address, 
+			int age, 
+			String email, 
+			String password) {
 		System.out.println("method04 일함!!!!");
+		System.out.println(name);
+		System.out.println(address);
+		System.out.println(age);
+		System.out.println(email);
+		System.out.println(password);
 	}
 }
 

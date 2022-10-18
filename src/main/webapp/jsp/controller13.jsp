@@ -30,6 +30,14 @@
 	<hr>
 	
 	<!-- form 만들기  -->
+	<form action="${pageContext.request.contextPath }/ex13/sub03">
+		<input type="text" name="score"> <br>
+		<input type="text" name="className"> <br>
+		<input type="text" name="studentNumber"> <br>
+		<input type="text" name="location"> <br>
+		<input type="text" name="avg"> <br>
+		<input type="submit" value="전송">
+	</form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>

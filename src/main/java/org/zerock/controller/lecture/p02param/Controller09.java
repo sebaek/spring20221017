@@ -20,6 +20,20 @@ public class Controller09 {
 	// name request param를 받을 수 있는 @RequestParam
 	
 	// name request param 받아서 출력 
+	@GetMapping("sub02")
+	public void method2(@RequestParam(name = "name") String p) {
+		System.out.println("name : " + p);
+	}
+	
+	@GetMapping("sub03")
+	public void method3(@RequestParam(value = "name") String p) {
+		System.out.println("name : " + p);
+	}
+	
+	@GetMapping("sub04")
+	public void method4(@RequestParam("name") String p) {
+		System.out.println("name : " + p);
+	}
 }
 
 

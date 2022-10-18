@@ -34,6 +34,10 @@ public class Controller12 {
 		System.out.println(city.size());
 		System.out.println(city);
 	}
+	
+	// 위 3개의 @RequestParam value attribute 생략 가능
+	
+	
 }
 
 

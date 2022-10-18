@@ -42,6 +42,26 @@ public class Controller09 {
 		System.out.println("name:" + a);
 		System.out.println("address:" + b);
 	}
+	
+	// /ex09/sub06?q=seoul&age=30
+	@GetMapping("sub06")
+	public void method6(@RequestParam("q") String a,
+						@RequestParam("age") String b) {
+		System.out.println("q:" + a);
+		System.out.println("age:" + b);
+	}
+	
+	// /ex09/sub07?age=99
+	@GetMapping("sub07")
+	public void method7(@RequestParam("age") int age) {
+		System.out.println(age);
+	}
+	
+	// /ex09/sub08?num1=10&num2=20
+	
+	public void method8() {
+		System.out.println(num1 + num2); // 30
+	}
 }
 
 

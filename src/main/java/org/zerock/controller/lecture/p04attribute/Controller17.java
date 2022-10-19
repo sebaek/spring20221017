@@ -3,6 +3,7 @@ package org.zerock.controller.lecture.p04attribute;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.zerock.domain.lecture.JavaBean03;
 
 @Controller
 @RequestMapping("ex17")
@@ -27,6 +28,18 @@ public class Controller17 {
 		model.addAttribute("address", "london");
 		model.addAttribute("age", 99);
 		model.addAttribute("email", "hm@daum.net");
+	}
+	
+	@RequestMapping("sub04")
+	public void method4(Model model) {
+		JavaBean03 obj = new JavaBean03();
+		obj.setAvg(9.99);
+		obj.setClassName("spring");
+		obj.setLocation("seoul");
+		obj.setScore(100);
+		obj.setStudentNumber("s80");
+		
+		model.addAttribute("student", obj);
 	}
 }
 

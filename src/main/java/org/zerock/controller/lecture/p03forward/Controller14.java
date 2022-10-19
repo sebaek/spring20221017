@@ -52,6 +52,11 @@ public class Controller14 {
 	
 	// sub05 요청
 	// /WEB-INF/views/ex14/sub05.jsp forward
+	@RequestMapping("sub05")
+	public String method5() {
+		
+		return "ex14/sub05";
+	}
 }
 
 

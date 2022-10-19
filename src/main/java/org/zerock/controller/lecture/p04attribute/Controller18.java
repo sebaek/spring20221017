@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.zerock.domain.lecture.JavaBean01;
 import org.zerock.domain.lecture.JavaBean02;
+import org.zerock.domain.lecture.Student;
 
 @Controller
 @RequestMapping("ex18")
@@ -25,6 +26,22 @@ public class Controller18 {
 		b.setEmail("ab@daum.net");
 		b.setName("park");
 		b.setPassword("aaa");
+	}
+	
+	@RequestMapping("sub03")
+	public void method03(@ModelAttribute Student s) {
+		s.setClassName("soccer");
+		s.setName("cha");
+		s.setStudentNumber("13");
+	}
+	
+	@RequestMapping("sub04")
+	public String method04(Student s) {
+		s.setClassName("football");
+		s.setName("son");
+		s.setStudentNumber("7");
+		
+		return "ex18/sub03";
 	}
 }
 

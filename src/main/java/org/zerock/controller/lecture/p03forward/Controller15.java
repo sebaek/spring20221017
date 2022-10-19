@@ -16,6 +16,10 @@ public class Controller15 {
 	// sub02 요청
 	// /WEB-INF/views/ex15/sub02.jsp 로 포워드 
 	
+	@RequestMapping("sub02")
+	public void method2() {
+		
+	}
 	
 }
 

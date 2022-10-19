@@ -24,6 +24,18 @@ public class Controller20 {
 	// sub03 요청
 	// /ex20/sub04 로 redirect
 	// 쿼리스트링에 request parameter : address=seoul&age=30
+	@RequestMapping("sub03")
+	public String method3() {
+		
+		return "redirect:/ex20/sub04?address=seoul&age=30";
+	}
+	
+	@RequestMapping("sub04")
+	public void method4(String address, int age) {
+		System.out.println(address);
+		System.out.println(age);
+	}
+	
 	
 }
 

@@ -52,6 +52,8 @@ public class Controller17 {
 		
 //		model.addAttribute("student", s);
 		model.addAttribute(s);
+		
+		System.out.println(model.containsAttribute("student"));
 	}
 }
 

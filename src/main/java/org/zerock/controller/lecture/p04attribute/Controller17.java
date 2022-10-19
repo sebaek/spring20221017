@@ -5,6 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.zerock.domain.lecture.JavaBean03;
 
+import lombok.Data;
+
 @Controller
 @RequestMapping("ex17")
 public class Controller17 {
@@ -41,7 +43,29 @@ public class Controller17 {
 		
 		model.addAttribute("student", obj);
 	}
+	
+	@RequestMapping("sub05")
+	public void method5(Model model) {
+		Student s = new Student();
+		s.setName("park ji sung");
+		s.setClassName("soccer");
+		s.setStudentNumber("13");
+		
+//		model.addAttribute("student", s);
+		model.addAttribute(s);
+	}
 }
+
+@Data
+class Student {
+	private String name;
+	private String className;
+	private String studentNumber;
+}
+
+
+
+
 
 
 

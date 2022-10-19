@@ -21,7 +21,13 @@ public class Controller17 {
 		model.addAttribute("email", "abc@daum.net");
 	}
 	
-	
+	@RequestMapping("sub03")
+	public void method3(Model model) {
+		model.addAttribute("name", "son hm");
+		model.addAttribute("address", "london");
+		model.addAttribute("age", 99);
+		model.addAttribute("email", "hm@daum.net");
+	}
 }
 
 

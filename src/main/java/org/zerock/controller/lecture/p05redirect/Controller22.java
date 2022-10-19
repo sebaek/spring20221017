@@ -79,6 +79,15 @@ public class Controller22 {
 		System.out.println(student);
 	}
 	
+	// sub09 요청
+	// /ex22/sub10 리다이렉트
+	// RedirectAttributes 사용해서 객체를 다음 요청에서 사용할 수 있게 전달
+	// 객체의 타입 : org.zerock.domain.lecture.JavaBean03
+	
+	// sub10 요청 
+	// 모델에 있는 org.zerock.domain.lecture.JavaBean03 타입의 객체 내용 출력
+	
+	
 	
 	
 }

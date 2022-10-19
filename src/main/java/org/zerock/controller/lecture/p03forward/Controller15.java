@@ -39,8 +39,32 @@ public class Controller15 {
 		return null;
 	}
 	
+	// sub05 요청
+	// name request param이 있으면
+	// /WEB-INF/views/ex15/sub051.jsp로 forward
+	
+	// 없으면
+	// /WEB-INF/views/ex15/sub05.jsp로 forward
+	@RequestMapping("sub05")
+	public String method5(String name) {
+		if (name == null) {
+			return null;
+		}
+		
+		return "ex15/sub051";
+	}
+	
+	// sub06 요청
+	// address request param 이 있으면
+	// /WEB-INF/views/ex15/sub061.jsp 로 forward
+	// 없으면
+	// /WEB-INF/views/ex15/sub06.jsp 로 forward
 	
 }
+
+
+
+
 
 
 

@@ -26,6 +26,11 @@ public class Controller16 {
 	// /ex16/sub02 요청
 	// /WEB-INF/views/ex16/sub02.jsp forward
 	// add attribute : address : seoul
+	@RequestMapping("sub02")
+	public void method2(HttpServletRequest req) {
+		req.setAttribute("address", "seoul");
+	}
+	
 }
 
 

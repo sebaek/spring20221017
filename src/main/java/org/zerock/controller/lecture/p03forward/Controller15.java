@@ -60,6 +60,15 @@ public class Controller15 {
 	// 없으면
 	// /WEB-INF/views/ex15/sub06.jsp 로 forward
 	
+	@RequestMapping(path = "sub06", params = "address")
+	public String method6() {
+		return "ex15/sub061";
+	}
+	
+	@RequestMapping("sub06") 
+	public void method7() {
+		
+	}
 }
 
 

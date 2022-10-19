@@ -12,6 +12,11 @@ public class Controller17 {
 	public void method1(Model model) {
 		model.addAttribute("myName", "cha bum");
 	}
+	
+	// /ex17/sub02 요청
+	// /WEB-INF/views/ex17/sub02.jsp 포워드
+	// add attribute : email : abc@daum.net
+	
 }
 
 

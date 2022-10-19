@@ -2,6 +2,7 @@ package org.zerock.controller.lecture.p05redirect;
 
 import java.io.IOException;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,25 @@ public class Controller19 {
 	
 	// sub05 요청
 	// sub06 redirect 
+	@RequestMapping("sub05")
+	public String method5() {
+		return "redirect:sub06";
+	}
+	
+	@RequestMapping("sub07")
+	public void method7(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		String location = request.getContextPath() + "/ex19/sub08";
+		response.sendRedirect(location);
+	}
+	
+	@RequestMapping("sub09")
+	public String method9() {
+		return "redirect:/ex19/sub10";
+	}
+	
+	// sub11 요청
+	// /ex19/sub12 redirect
+	
 }
 
 

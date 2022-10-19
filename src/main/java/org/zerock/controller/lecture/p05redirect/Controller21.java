@@ -30,6 +30,20 @@ public class Controller21 {
 	// /ex21/sub04 redirect
 	// ?age=99&email=abc@daum.net
 	// RedirectAttributes 사용
+	@RequestMapping("sub03")
+	public String method3(RedirectAttributes rttr) {
+		rttr.addAttribute("age", 99);
+		rttr.addAttribute("email", "abc@daum.net");
+		
+		return "redirect:/ex21/sub04";
+	}
+	
+	@RequestMapping("sub04")
+	public void method4(String email, int age) {
+		System.out.println(email);
+		System.out.println(age);
+	}
+	
 }
 
 

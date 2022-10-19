@@ -14,6 +14,11 @@ public class Controller18 {
 	public void method01(@ModelAttribute("bean") JavaBean01 b) {
 		
 	}
+	
+	// @ModelAttribute annotation 사용
+	// bean2 라는 이름의 attribute를 model에 추가
+	// bean2의 type : org.zerock.domain.lecture.JavaBean02
+	
 }
 
 

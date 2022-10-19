@@ -44,7 +44,10 @@ public class Controller19 {
 	
 	// sub11 요청
 	// /ex19/sub12 redirect
-	
+	@RequestMapping("sub11")
+	public String method11() {
+		return "redirect:/ex19/sub12";
+	}
 }
 
 

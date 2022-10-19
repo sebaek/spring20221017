@@ -22,6 +22,10 @@ public class Controller16 {
 		req.setAttribute("myName", "park ji sung");
 		
 	}
+	
+	// /ex16/sub02 요청
+	// /WEB-INF/views/ex16/sub02.jsp forward
+	// add attribute : address : seoul
 }
 
 

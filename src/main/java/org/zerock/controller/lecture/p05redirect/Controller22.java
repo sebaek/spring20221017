@@ -4,8 +4,10 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.zerock.domain.lecture.JavaBean03;
 import org.zerock.domain.lecture.Student;
 
 @Controller
@@ -83,10 +85,26 @@ public class Controller22 {
 	// /ex22/sub10 리다이렉트
 	// RedirectAttributes 사용해서 객체를 다음 요청에서 사용할 수 있게 전달
 	// 객체의 타입 : org.zerock.domain.lecture.JavaBean03
+	@RequestMapping("sub09")
+	public String method9(RedirectAttributes rttr) {
+		JavaBean03 j = new JavaBean03();
+		j.setAvg(99.9);
+		j.setClassName("math");
+		j.setLocation("korea");
+		j.setScore(100);
+		j.setStudentNumber("11");
+		
+		rttr.addFlashAttribute("myBean", j);
+		
+		return "redirect:/ex22/sub10";
+	}
 	
 	// sub10 요청 
 	// 모델에 있는 org.zerock.domain.lecture.JavaBean03 타입의 객체 내용 출력
-	
+	@RequestMapping("sub10")
+	public void method10(@ModelAttribute("myBean") JavaBean03 bean) {
+		System.out.println(bean);
+	}
 	
 	
 	

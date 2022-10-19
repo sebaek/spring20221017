@@ -37,7 +37,18 @@ public class Controller14 {
 	
 	// sub03 경로
 	// /WEB-INF/views/xyz.jsp 로 포워드하는 메소드 작성
+	@RequestMapping("sub03")
+	public String method3() {
+		
+		return "xyz";
+	}
 	
+	@RequestMapping("sub04")
+	public String method4() {
+	
+		// /WEB-INF/views/ex14/sub04.jsp
+		return "ex14/sub04";
+	}
 }
 
 

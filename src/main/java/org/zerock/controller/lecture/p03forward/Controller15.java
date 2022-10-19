@@ -21,7 +21,22 @@ public class Controller15 {
 		
 	}
 	
+	
+	@RequestMapping("sub03")
+	public String method3() {
+		
+		// void처럼 default view name을 사용해서 view로 포워드
+		return null; 
+		
+	}
+	
+	
+	
+	
 }
+
+
+
 
 
 

@@ -16,6 +16,11 @@ public class Controller17 {
 	// /ex17/sub02 요청
 	// /WEB-INF/views/ex17/sub02.jsp 포워드
 	// add attribute : email : abc@daum.net
+	@RequestMapping("sub02")
+	public void method2(Model model) {
+		model.addAttribute("email", "abc@daum.net");
+	}
+	
 	
 }
 

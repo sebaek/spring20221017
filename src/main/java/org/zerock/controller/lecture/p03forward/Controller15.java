@@ -31,6 +31,13 @@ public class Controller15 {
 	}
 	
 	
+	// sub04 요청
+	// /WEB-INF/views/ex15/sub04.jsp 포워드
+	@RequestMapping("sub04")
+	public String method4() {
+		
+		return null;
+	}
 	
 	
 }

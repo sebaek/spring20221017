@@ -49,6 +49,9 @@ public class Controller14 {
 		// /WEB-INF/views/ex14/sub04.jsp
 		return "ex14/sub04";
 	}
+	
+	// sub05 요청
+	// /WEB-INF/views/ex14/sub05.jsp forward
 }
 
 

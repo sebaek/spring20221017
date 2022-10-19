@@ -4,8 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.zerock.domain.lecture.JavaBean03;
-
-import lombok.Data;
+import org.zerock.domain.lecture.Student;
 
 @Controller
 @RequestMapping("ex17")
@@ -53,15 +52,12 @@ public class Controller17 {
 		
 //		model.addAttribute("student", s);
 		model.addAttribute(s);
+		model.addAttribute("hello");
 	}
 }
 
-@Data
-class Student {
-	private String name;
-	private String className;
-	private String studentNumber;
-}
+
+
 
 
 

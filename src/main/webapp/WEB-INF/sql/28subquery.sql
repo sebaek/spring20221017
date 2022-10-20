@@ -26,5 +26,5 @@ FROM
 	(SELECT CategoryID, 
 			AVG(Price) average
 	FROM Products 
-	GROUP BY CategoryID)
+	GROUP BY CategoryID) A
 WHERE average > 30;

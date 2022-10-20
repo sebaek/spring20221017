@@ -102,18 +102,23 @@ public class Controller24 {
 		// 총 고객 수
 		sql = "SELECT COUNT(*) FROM Customers";
 		
+		int cnt = 1;
 		try (Connection con = dataSource.getConnection();
 				Statement stmt = con.createStatement();
 				ResultSet rs = stmt.executeQuery(sql);) {
 			
 			if (rs.next()) {
-				int cnt = rs.getInt(1);
-				pageInfo.put("total", cnt);
-				pageInfo.put("lastPage", (cnt - 1)/10 + 1);
+				cnt = rs.getInt(1);
 			}
 		}
 		
+		int lastPage = (cnt - 1)/10 + 1;
+		int leftPage = Math.max(page - 5, 1);
+		pageInfo.put("total", cnt);
+		pageInfo.put("lastPage", lastPage);
 		pageInfo.put("current", page);
+		pageInfo.put("leftPage", leftPage);
+		pageInfo.put("rightPage", Math.min(leftPage + 9, lastPage));
 		
 		return "ex24/sub01";
 	}

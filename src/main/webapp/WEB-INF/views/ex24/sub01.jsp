@@ -50,7 +50,7 @@
 			<div class="col">
 				<nav aria-label="Page navigation example">
 				  <ul class="pagination justify-content-center">
-				    <c:forEach begin="1" end="${pageInfo.lastPage }" var="pageNumber">
+				    <c:forEach begin="${pageInfo.leftPage }" end="${pageInfo.rightPage }" var="pageNumber">
 				    	<c:url value="/ex24/sub02" var="pageLink">
 				    		<c:param name="page" value="${pageNumber }"></c:param>
 				    	</c:url>

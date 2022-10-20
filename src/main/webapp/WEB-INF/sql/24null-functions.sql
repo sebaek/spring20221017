@@ -24,6 +24,6 @@ SELECT
 	City,
 	PostalCode,
 	Country
-FROM Customers;
+FROM Customers;Categories
 
 

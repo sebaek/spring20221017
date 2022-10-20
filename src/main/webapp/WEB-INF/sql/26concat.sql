@@ -11,3 +11,9 @@ SELECT CustomerID,
 -- 직원 테이블에서 firstName, LastName 
 -- 스페이스 구분해서 연결 한 fullName 조회
 -- 
+SELECT EmployeeID,
+       CONCAT(FirstName, ' ', LastName) fullName,
+       BirthDate,
+       Photo,
+       Notes
+FROM Employees;

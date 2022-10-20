@@ -14,5 +14,17 @@ WHERE Price =
 (SELECT MIN(Price) FROM Products);
 
 -- 평균 가격 보다 가격이 높은 상품들 조회
+SELECT * FROM Products
+WHERE Price > (SELECT AVG(Price) FROM Products);
 -- 평균 가격 보다 가격이 낮은 상품들 조회
+SELECT * FROM Products
+WHERE Price < (SELECT AVG(Price) FROM Products);
 
+-- 카테고리별 평균
+SELECT * 
+FROM 
+	(SELECT CategoryID, 
+			AVG(Price) average
+	FROM Products 
+	GROUP BY CategoryID)
+WHERE average > 30;

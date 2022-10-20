@@ -49,6 +49,6 @@ SELECT SUM(Price) FROM Products;
 
 -- OrderDetails 에서
 -- 총 주문 수량 조회
-
+SELECT SUM(Quantity) FROM OrderDetails;
 
 

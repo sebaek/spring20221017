@@ -99,6 +99,20 @@ public class Controller24 {
 			
 		}
 		
+		// 총 고객 수
+		sql = "SELECT COUNT(*) FROM Customers";
+		
+		try (Connection con = dataSource.getConnection();
+				Statement stmt = con.createStatement();
+				ResultSet rs = stmt.executeQuery(sql);) {
+			
+			if (rs.next()) {
+				int cnt = rs.getInt(1);
+				pageInfo.put("total", cnt);
+				pageInfo.put("lastPage", (cnt - 1)/10 + 1);
+			}
+		}
+		
 		pageInfo.put("current", page);
 		
 		return "ex24/sub01";

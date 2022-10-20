@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.sql.DataSource;
 
@@ -60,7 +61,8 @@ public class Controller24 {
 	@GetMapping("sub02")
 	public String listCustomers(
 			@RequestParam(name = "page", defaultValue="1") int page,
-			@ModelAttribute("customerList") ArrayList<Customer> list) throws Exception {
+			@ModelAttribute("customerList") ArrayList<Customer> list,
+			@ModelAttribute("pageInfo") HashMap<String, Object> pageInfo) throws Exception {
 		
 		String sql = "SELECT "
 				+ "CustomerID id, "
@@ -97,6 +99,7 @@ public class Controller24 {
 			
 		}
 		
+		pageInfo.put("current", page);
 		
 		return "ex24/sub01";
 	}

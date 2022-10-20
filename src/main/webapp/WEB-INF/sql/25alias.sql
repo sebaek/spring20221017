@@ -15,3 +15,19 @@ FROM Customers;
 -- FirstName -> fname
 -- LastName -> lname
 -- BirthDate -> birth
+SELECT EmployeeID AS id,
+       FirstName AS fname,
+       LastName AS lname,
+       BirthDate AS birth,
+       Photo,
+       Notes
+FROM Employees;
+
+-- AS 키워드는 생략 가능
+SELECT EmployeeID id,
+       FirstName fname,
+       LastName lname,
+       BirthDate birth,
+       Photo,
+       Notes
+FROM Employees;

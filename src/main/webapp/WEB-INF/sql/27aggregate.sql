@@ -34,7 +34,11 @@ HAVING COUNT(*) > 5;
 
 -- 상품 테이블에서 카테고리별 평균
 -- 카테고리별 평균이 30.00 보다 큰 것만 조회
-
+SELECT CategoryID, 
+       AVG(Price) average
+FROM Products
+GROUP BY CategoryID
+HAVING AVG(Price) > 30;
 
 
 

@@ -16,7 +16,14 @@ SELECT AVG(IFNULL(Price, 0)) FROM Products; -- 28.496282
 
 
 -- Customers 테이블에서 CustomerName 이 NULL 이면 -> 'Anonymous'
-
-
+SELECT 
+	CustomerID, 
+	IFNULL(CustomerName, 'Anonymous'),
+	ContactName,
+	Address,
+	City,
+	PostalCode,
+	Country
+FROM Customers;
 
 

@@ -33,4 +33,16 @@ SELECT COUNT(*)
 FROM Employees 
 WHERE BirthDate BETWEEN '1960-01-01' AND '1969-12-31';
 
+-- AVG : 평균
+SELECT * FROM Products;
+SELECT AVG(Price) FROM Products;
+-- NULL 데이터 무시
+INSERT INTO Products (ProductName) VALUES ('Kimchi');
+
+-- 평균 주문 수량
+SELECT * FROM OrderDetails;
+SELECT AVG(Quantity) FROM OrderDetails;
+
+
+
 

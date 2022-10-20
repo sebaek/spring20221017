@@ -31,3 +31,13 @@ SELECT EmployeeID id,
        Photo,
        Notes
 FROM Employees;
+
+-- Products 테이블에 가격 null
+-- Price가 null이면 0.00으로 조회 
+-- 위 컬럼명 Price
+
+
+
+
+
+

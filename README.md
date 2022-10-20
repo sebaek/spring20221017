@@ -1,0 +1,1 @@
+[w3shools db 초기화 query](https://gist.github.com/sebaek/72c8e753e9359db7751e27c36abd8fa1)

@@ -5,3 +5,13 @@ SELECT CustomerID, CustomerName FROM Customers;
 SELECT CustomerID AS id,
 	   CustomerName AS name
 FROM Customers;
+
+SELECT CustomerID AS id,
+       IFNULL(CustomerName, 'Anonymous') AS name
+FROM Customers;
+
+-- 직원 테이블 조회
+-- EmployeeID -> id
+-- FirstName -> fname
+-- LastName -> lname
+-- BirthDate -> birth

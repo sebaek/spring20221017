@@ -27,7 +27,10 @@ INSERT INTO Customers (ContactName, City, Country)
 VALUES ('captain', 'ny', 'USA');
 
 -- 100.00 달러가 넘는 상품의 수 Products
-
+SELECT COUNT(*) FROM Products WHERE Price > 100.00;
 -- 60년대 (60~69)에 태어난 직원의 수
+SELECT COUNT(*) 
+FROM Employees 
+WHERE BirthDate BETWEEN '1960-01-01' AND '1969-12-31';
 
 

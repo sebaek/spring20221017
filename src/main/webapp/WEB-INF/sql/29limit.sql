@@ -36,10 +36,14 @@ ORDER BY CustomerID
 LIMIT 3; -- 위에서부터 3개
 
 -- 직원의 나이가 두번째,세번째 많은 사람 조회
+SELECT * FROM Employees ORDER BY BirthDate LIMIT 1, 2;
 -- 두번째로 어린 직원 조회
+SELECT * FROM Employees ORDER BY BirthDate DESC LIMIT 1, 1;
 -- 두번째로 가격이 비싼 상품 조회
+SELECT * FROM Products ORDER BY Price DESC LIMIT 1, 1;
 -- 10번째로 가격이 비싼 상품 조회
-
+SELECT * FROM Products ORDER BY Price DESC LIMIT 9, 1;
+SELECT * FROM Products ORDER BY Price DESC;
 
 
 

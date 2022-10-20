@@ -35,7 +35,13 @@ FROM Employees;
 -- Products 테이블에 가격 null
 -- Price가 null이면 0.00으로 조회 
 -- 위 컬럼명 Price
-
+SELECT ProductID,
+       ProductName,
+	   SupplierID,
+       CategoryID,
+       Unit,
+       IFNULL(Price, 0.00) Price
+ FROM Products;
 
 
 

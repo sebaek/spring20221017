@@ -3,7 +3,6 @@ package org.zerock.controller.lecture.p06jdbc;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.Instant;
 
@@ -91,8 +90,33 @@ public class Controller25 {
 		}
 	}
 	
-//	@RequestMapping("sub04")
+	@RequestMapping("sub04")
 	// myTable08 조회 코드 작성
+	public void method4() throws Exception {
+		String sql = "SELECT name, age, address, score, birthDate, inserted"
+				+ " FROM myTable08";
+		try (Connection con = dataSource.getConnection();
+				Statement stmt = con.createStatement();
+				ResultSet rs = stmt.executeQuery(sql);) {
+			
+			while (rs.next()) {
+				String name = rs.getString("name");
+				int age = rs.getInt("age");
+				String address = rs.getString("address");
+				double score = rs.getDouble("score");
+				java.sql.Date birth = rs.getDate("birthDate");
+				java.sql.Timestamp inserted = rs.getTimestamp("inserted");
+				
+				System.out.println(name);
+				System.out.println(age);
+				System.out.println(address);
+				System.out.println(score);
+				System.out.println(birth);
+				System.out.println(inserted);
+				System.out.println();
+			}
+		}
+	}
 	
 	
 }

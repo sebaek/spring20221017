@@ -28,3 +28,5 @@ SELECT * FROM Orders;
 -- 주문번호, 주문일, 고객명, 고객주소
 SELECT * FROM Customers;
 
+-- Products 테이블 정규화 전
+-- 상품명, 유닛, 가격, 카테고리명, 카테고리설명, 공급자명, 공급자주소

@@ -15,6 +15,14 @@ SELECT * FROM myTable06;
 -- DATETIME : java.sql.Timestamp 
 
 
-
+CREATE TABLE myTable07 (
+	col1 INT,
+    col2 DEC(10, 3),
+    col3 VARCHAR(255),
+    col4 CHAR(3),
+    col5 DATE,
+    col6 DATETIME
+);
+SELECT * FROM myTable07;
 
 

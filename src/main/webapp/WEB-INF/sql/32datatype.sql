@@ -42,6 +42,7 @@ INSERT INTO myTable02 (col1, col2)
 VALUES ('ab', 'ab'); -- ok ('ab', 'ab ')
 SELECT * FROM myTable02;
 
+SET sql_mode = 'PAD_CHAR_TO_FULL_LENGTH';
 
 
 

@@ -45,7 +45,20 @@ SELECT * FROM myCustomers;
 
 -- w3schools.Employees 테이블을
 -- mydb1에 myEmployees 테이블로 복사
+CREATE TABLE myEmployees AS
+SELECT * FROM w3schools.Employees;
+DESC myEmployees;
+SELECT * FROM myEmployees;
 
+-- Products
+CREATE TABLE myProducts AS
+SELECT ProductID id,
+       ProductName name,
+	   Price price
+FROM w3schools.Products;
+DESC myProducts;
+
+SELECT * FROM myProducts;
 
 
 

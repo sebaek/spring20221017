@@ -34,5 +34,12 @@ CREATE TABLE myTable08 (
     birthDate DATE,
     inserted DATETIME
 );
+SELECT * FROM myTable08;
+
+
+
+
+
+
 
 

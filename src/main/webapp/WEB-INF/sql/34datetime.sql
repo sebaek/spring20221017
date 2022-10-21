@@ -26,3 +26,13 @@ CREATE TABLE myTable07 (
 SELECT * FROM myTable07;
 
 
+CREATE TABLE myTable08 (
+	name VARCHAR(255),
+    age INT,
+    score DEC(10, 2),
+    address VARCHAR(255),
+    birthDate DATE,
+    inserted DATETIME
+);
+
+

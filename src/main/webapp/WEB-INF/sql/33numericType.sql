@@ -18,7 +18,14 @@ VALUES (999, 9999, 4200000000); -- not ok
 SELECT * FROM myTable03;
 
 
-
+CREATE TABLE myTable04 (
+	col1 INT(3) ZEROFILL,
+    col2 INT(4) ZEROFILL,
+    col3 INT -- -21억 ~ +21억 (?)
+);
+INSERT INTO myTable04 (col1, col2, col3)
+VALUES (22, 22, 22);
+SELECT * FROM myTable04;
 
 
 

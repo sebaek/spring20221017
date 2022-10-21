@@ -22,7 +22,8 @@ DESC MyTable17;
 -- col7 컬럼 추가
 -- type : VARCHAR(255)
 -- constraints : NOT NULL, UNIQUE, DEFAULT 'empty'
-
+ALTER TABLE MyTable17
+ADD COLUMN col7 VARCHAR(255) NOT NULL UNIQUE DEFAULT 'empty';
 
 
 

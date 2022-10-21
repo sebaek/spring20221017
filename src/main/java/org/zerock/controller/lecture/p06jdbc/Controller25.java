@@ -2,7 +2,9 @@ package org.zerock.controller.lecture.p06jdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.time.Instant;
 
 import javax.sql.DataSource;
@@ -61,7 +63,49 @@ public class Controller25 {
 			
 		}
 	}
+	
+	@RequestMapping("sub03")
+	public void method3() throws Exception {
+		String sql = "SELECT col1, col2, col3, col4, col5, col6 FROM myTable07";
+		
+		try (Connection con = dataSource.getConnection();
+				Statement stmt = con.createStatement();
+				ResultSet rs = stmt.executeQuery(sql);) {
+			
+			while (rs.next()) {
+				int col1 = rs.getInt("col1");
+				double col2 = rs.getDouble("col2");
+				String col3 = rs.getString("col3");
+				String col4 = rs.getString("col4");
+				java.sql.Date col5 = rs.getDate("col5");
+				java.sql.Timestamp col6 = rs.getTimestamp("col6");
+				
+				System.out.println(col1);
+				System.out.println(col2);
+				System.out.println(col3);
+				System.out.println(col4);
+				System.out.println(col5);
+				System.out.println(col6);
+				System.out.println();
+			}
+		}
+	}
+	
+//	@RequestMapping("sub04")
+	// myTable08 조회 코드 작성
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
 
 
 

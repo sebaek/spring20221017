@@ -12,3 +12,9 @@ INSERT INTO MyTable14 (col1, col2)
 VALUES (-333, -33333);
 
 SELECT * FROM MyTable14;
+
+
+
+
+
+

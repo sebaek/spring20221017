@@ -56,6 +56,8 @@ SELECT * FROM Products JOIN Categories
 WHERE Products.CategoryID = Categories.CategoryID
   AND Products.ProductName = 'Chais';
 
+-- Ikura 라는 상품의 카테고리명 조회
+-- Seafood 카테고리에 속한 상품명들 조회
 
 
 

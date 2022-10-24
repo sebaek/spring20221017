@@ -16,3 +16,10 @@ FROM Products p JOIN Suppliers s
   ON p.SupplierID = s.SupplierID
 WHERE s.SupplierName = 'Mayumi''s';
 
+-- '1996-07-04'날 주문한 고객명 조회
+SELECT * FROM Orders WHERE OrderDate = '1996-07-04';
+
+-- '1996-07-04'날 주문을 처리한 직원명 조회
+
+-- '1996-07-04'날 주문을 배송한 배송자명 조회
+

@@ -4,3 +4,8 @@ SELECT * FROM Products;
 SELECT p.ProductName, s.SupplierName
 FROM Products p JOIN Suppliers s
      ON p.SupplierID = s.SupplierID;
+
+-- 'Tofu'상품을 공급하는 공급자가 사는 도시 조회
+-- 'Mayumi''s'가 공급하는 상품명들 조회
+
+

@@ -71,6 +71,16 @@ FROM Categories JOIN Products
      ON Categories.CategoryID = Products.CategoryID
 WHERE Categories.CategoryName = 'Seafood';
 
+-- ALIAS : 테이블명, 컬럼명에 별칭
+SELECT c.CategoryId, p.ProductName
+-- FROM Categories AS c JOIN Products AS p 
+FROM Categories c JOIN Products p 
+     ON c.CategoryId = p.CategoryId
+WHERE c.CategoryName = 'Seafood';
+
+
+
+
 
 
 

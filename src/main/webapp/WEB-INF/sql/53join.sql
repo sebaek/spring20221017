@@ -52,6 +52,10 @@ SELECT * FROM Products JOIN Categories
 ON Products.CategoryID = Categories.CategoryID
 WHERE Products.ProductName = 'Chais';
 
+SELECT * FROM Products JOIN Categories 
+WHERE Products.CategoryID = Categories.CategoryID
+  AND Products.ProductName = 'Chais';
+
 
 
 

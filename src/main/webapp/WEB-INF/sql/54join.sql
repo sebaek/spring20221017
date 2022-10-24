@@ -18,8 +18,18 @@ WHERE s.SupplierName = 'Mayumi''s';
 
 -- '1996-07-04'날 주문한 고객명 조회
 SELECT * FROM Orders WHERE OrderDate = '1996-07-04';
+SELECT CustomerName FROM Customers WHERE CustomerId = 90;
+
+SELECT c.CustomerName, o.OrderDate
+FROM Orders o JOIN Customers c ON o.CustomerID = c.CustomerID
+WHERE o.OrderDate = '1996-07-04';
 
 -- '1996-07-04'날 주문을 처리한 직원명 조회
+SELECT e.FirstName, e.LastName
+FROM Employees e JOIN Orders o ON e.EmployeeID = o.EmployeeId
+WHERE o.OrderDate = '1996-07-04';
 
 -- '1996-07-04'날 주문을 배송한 배송자명 조회
-
+SELECT s.ShipperName
+FROM Shippers s JOIN Orders o ON s.ShipperID = o.ShipperID
+WHERE o.OrderDate = '1996-07-04';

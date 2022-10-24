@@ -30,6 +30,12 @@ GROUP BY o.OrderDate
 ORDER BY o.OrderDate ;
 
 
+-- 고객별 주문 총 금액 조회
+
+
+
+
+
 
 
 

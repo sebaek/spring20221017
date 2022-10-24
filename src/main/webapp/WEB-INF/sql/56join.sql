@@ -31,6 +31,16 @@ ORDER BY o.OrderDate ;
 
 
 -- 고객별 주문 총 금액 조회
+SELECT c.CustomerID, 
+       c.CustomerName, 
+       SUM(d.Quantity * p.Price) Total
+FROM Customers c JOIN Orders o ON c.CustomerID = o.CustomerID
+			     JOIN OrderDetails d ON o.OrderID = d.OrderID
+                 JOIN Products p ON d.ProductID = p.ProductID
+GROUP BY c.CustomerID 
+HAVING Total >= 10000
+ORDER BY c.CustomerID;
+                 
 
 
 

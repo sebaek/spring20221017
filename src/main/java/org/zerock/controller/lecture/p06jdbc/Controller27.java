@@ -76,7 +76,7 @@ public class Controller27 {
 				stmt1.setString(1, fname);
 				stmt1.setString(2, lname);
 				
-				stmt1.executeQuery();
+				stmt1.executeUpdate();
 				
 				// 일부러 Exception 발생
 //				int a = 0;

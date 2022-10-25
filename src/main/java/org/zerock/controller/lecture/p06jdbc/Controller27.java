@@ -7,6 +7,8 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -45,6 +47,21 @@ public class Controller27 {
 				con.rollback();
 			}
 		}
+	}
+	
+	@GetMapping("sub02")
+	public void method2() {
+		
+	}
+	
+	@PostMapping("sub02")
+	public void method3() {
+		// Employee 테이블 INSERT 쿼리 실행
+		// Salary 테이블 INSERT 쿼리 실행
+		
+		// 위 두 쿼리가 모두 실행되거나
+		//              모두 실패할 수 있는 코드 작성
+		
 	}
 }
 

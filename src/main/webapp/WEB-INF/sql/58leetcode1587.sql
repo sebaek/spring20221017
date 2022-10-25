@@ -29,6 +29,18 @@ VALUES
 (7, 900003, -4000, '2020-09-11');
 
 
+SELECT u.name name, SUM(amount) balance
+FROM Users u JOIN Transactions t ON u.account = t.account
+GROUP BY u.account
+HAVING balance > 10000
+;
+
+
+
+
+
+
+
 
 
 

@@ -1,6 +1,8 @@
 package org.zerock.controller.lecture.p06jdbc;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 import javax.sql.DataSource;
@@ -55,15 +57,57 @@ public class Controller27 {
 	}
 	
 	@PostMapping("sub02")
-	public void method3() {
+	public void method3(
+			String fname, String lname, int salary) throws Exception {
 		// Employee 테이블 INSERT 쿼리 실행
 		// Salary 테이블 INSERT 쿼리 실행
 		
 		// 위 두 쿼리가 모두 실행되거나
 		//              모두 실패할 수 있는 코드 작성
+		String sql1 = "INSERT INTO Employees (firstName, lastName) VALUES (?, ?) ";
+		String sql2 = "INSERT INTO Salary (employeeId, salary) VALUES (?, ?) ";
+		
+		try (Connection con = dataSource.getConnection();) {
+			con.setAutoCommit(false);
+			
+			try (PreparedStatement stmt1 = con.prepareStatement(sql1, Statement.RETURN_GENERATED_KEYS);
+					PreparedStatement stmt2 = con.prepareStatement(sql2);) {
+				
+				stmt1.setString(1, fname);
+				stmt1.setString(2, lname);
+				
+				stmt1.executeQuery();
+				
+				// 일부러 Exception 발생
+//				int a = 0;
+//				int b = 3/a;
+				
+				try (ResultSet rs = stmt1.getGeneratedKeys();) {
+					if (rs.next()) {
+						int key = rs.getInt(1);
+						stmt2.setInt(1, key); // 자동생성된 key 사용
+						stmt2.setInt(2, salary);
+						stmt2.executeUpdate();
+					}
+				}
+				
+				con.commit();
+			} catch (Exception e) {
+				e.printStackTrace();
+				con.rollback();
+			}
+		}
 		
 	}
 }
+
+
+
+
+
+
+
+
 
 
 

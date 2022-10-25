@@ -14,5 +14,6 @@ VALUES (1, 1000)
       ,(8, 3500)
       ,(9, 3500);
 
-SELECT * FROM Employees;
+SELECT * FROM Employees ORDER BY 1 DESC;
+SELECT * FROM Salary ORDER BY 1 DESC;
 DELETE FROM Employees WHERE EmployeeID > 9;

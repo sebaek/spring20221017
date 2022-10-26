@@ -17,6 +17,11 @@ public class Controller28 {
 		String time = mapper.getCurrentTime();
 		System.out.println(time);
 	}
+	
+	@RequestMapping("sub02")
+	public void method2() {
+		System.out.println(mapper.getCustomerName());
+	}
 }
 
 

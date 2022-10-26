@@ -24,7 +24,9 @@
 	</select>
 	
 	<select id="getQuantity" resultType="int">
-	
+	SELECT Quantity
+	FROM OrderDetails
+	WHERE OrderDetailId = 1
 	</select>
 </mapper>
 

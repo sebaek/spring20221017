@@ -15,6 +15,8 @@ public interface Mapper01 {
 	public String getProductName();
 	
 	public double getPrice();
+	
+	public int getQuantity();
 }
 
 

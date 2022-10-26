@@ -37,6 +37,11 @@ public class Controller28 {
 	public void method5() {
 		System.out.println(mapper.getPrice());
 	}
+	
+	@RequestMapping("sub06")
+	public void method6() {
+		System.out.println(mapper.getQuantity());
+	}
 }
 
 

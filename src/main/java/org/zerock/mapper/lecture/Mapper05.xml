@@ -27,10 +27,10 @@ WHERE o.OrderId = 10248
 	</select>
 	
 	<resultMap type="org.zerock.domain.lecture.JavaBean08" id="orderMap">
-		<result column="id" property="id"/>
+		<id column="id" property="id"/>
 		<result column="date" property="date"/>
 		<association property="employee">
-			<result column="employeeId" property="id"/>
+			<id column="employeeId" property="id"/>
 			<result column="employeeFirstName" property="firstName"/>
 			<result column="employeeLastName" property="lastName"/>
 		</association>
@@ -51,11 +51,11 @@ WHERE o.OrderId = 10248
 		p.ProductID = 10	
 	</select>
 	<resultMap type="org.zerock.domain.lecture.JavaBean09" id="productMap">
-		<result column="productId" property="id"/>
+		<id column="productId" property="id"/>
 		<result column="productName" property="name" />
 		<result column="price" property="price"/>
 		<association property="supplier">
-			<result column="supplierId" property="id"/>
+			<id column="supplierId" property="id"/>
 			<result column="supplierName" property="name"/>
 			<result column="phone" property="phone"/>
 		</association>

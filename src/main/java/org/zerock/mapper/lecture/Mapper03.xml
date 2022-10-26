@@ -15,8 +15,28 @@
 		<result column="CustomerName" property="name"/>
 		<result column="Country" property="country"/>
 	</resultMap>
+	
+	<select id="getEmployee" resultMap="employeeNameMap">
+	SELECT FirstName, LastName
+	FROM Employees
+	WHERE EmployeeID = 5
+	
+	</select>
 
+	<resultMap type="org.zerock.domain.lecture.JavaBean05" id="employeeNameMap">
+		<result column="FirstName" property="firstName"/>
+		<result column="LastName" property="lastName"/>
+	</resultMap>
+	
+	<select id="getEmployee2" resultType="org.zerock.domain.lecture.JavaBean05">
+	SELECT FirstName, LastName
+	FROM Employees
+	WHERE EmployeeID = 3	
+	</select>
 </mapper>
+
+
+
 
 
 

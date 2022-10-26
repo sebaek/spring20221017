@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.zerock.domain.lecture.JavaBean04;
+import org.zerock.domain.lecture.JavaBean05;
 import org.zerock.mapper.lecture.Mapper03;
 
 @Controller
@@ -30,6 +31,13 @@ public class Controller30 {
 		JavaBean05 employee = mapper.getEmployee();
 		System.out.println(employee.getFirstName());
 		System.out.println(employee.getLastName());
+	}
+	
+	@RequestMapping("sub03")
+	public void method3() {
+		JavaBean05 emp = mapper.getEmployee2();
+		System.out.println(emp.getFirstName());
+		System.out.println(emp.getLastName());
 	}
 }
 

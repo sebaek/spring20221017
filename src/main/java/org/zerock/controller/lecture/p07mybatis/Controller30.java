@@ -18,7 +18,29 @@ public class Controller30 {
 		JavaBean04 customer = mapper.getCustomer();
 		System.out.println(customer);
 	}
+	
+	@RequestMapping("sub02")
+	public void method2() {
+		/*
+		 * SELECT FirstName, LastName
+		 * FROM Employees
+		 * WHERE EmployeeId = 5
+		 */
+		
+		JavaBean05 employee = mapper.getEmployee();
+		System.out.println(employee.getFirstName());
+		System.out.println(employee.getLastName());
+	}
 }
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,5 +1,6 @@
 package org.zerock.controller.lecture.p07mybatis;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +39,22 @@ public class Controller29 {
 		System.out.println(priceList.get(1));
 		
 	}
+	
+	@RequestMapping("sub04")
+	public void method4() {
+		List<LocalDate> birthDateList = mapper.getEmployeeBirthDate();
+		System.out.println(birthDateList.size());
+		birthDateList.forEach(System.out::println);
+		
+	}
 }
+
+
+
+
+
+
+
 
 
 

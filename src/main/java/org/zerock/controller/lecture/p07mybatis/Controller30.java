@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.zerock.domain.lecture.JavaBean04;
 import org.zerock.domain.lecture.JavaBean05;
+import org.zerock.domain.lecture.JavaBean06;
 import org.zerock.mapper.lecture.Mapper03;
 
 @Controller

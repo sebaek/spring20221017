@@ -44,6 +44,16 @@
 		WHERE 
 		    CustomerId = 55
 	</select>
+	
+	<select id="getProduct" resultType="org.zerock.domain.lecture.JavaBean06">
+	SELECT 
+		ProductName name,
+		Price 
+	FROM 
+		Products
+	WHERE
+		ProductId = 8
+	</select>
 </mapper>
 
 

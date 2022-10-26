@@ -1,5 +1,7 @@
 package org.zerock.mapper.lecture;
 
+import java.time.LocalDate;
+
 import org.apache.ibatis.annotations.Select;
 
 public interface Mapper01 {
@@ -17,6 +19,10 @@ public interface Mapper01 {
 	public double getPrice();
 	
 	public int getQuantity();
+	
+//	public Date getBirthDate();
+	
+	public LocalDate getBirthDate(); 
 }
 
 

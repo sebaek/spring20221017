@@ -28,6 +28,14 @@
 	FROM OrderDetails
 	WHERE OrderDetailId = 1
 	</select>
+	
+	<!--  sql : Date -> java : java.time.LocalDate -->
+	<!--  sql : DateTime -> java : java.time.LocalDateTime -->
+	<select id="getBirthDate" resultType="java.time.LocalDate">
+		SELECT BirthDate
+		FROM Employees
+		WHERE EmployeeId = 3
+	</select>
 </mapper>
 
 

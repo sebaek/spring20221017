@@ -42,6 +42,11 @@ public class Controller28 {
 	public void method6() {
 		System.out.println(mapper.getQuantity());
 	}
+	
+	@RequestMapping("sub07")
+	public void method7() {
+		System.out.println(mapper.getBirthDate());
+	}
 }
 
 

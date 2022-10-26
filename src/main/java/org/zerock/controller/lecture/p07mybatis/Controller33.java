@@ -21,6 +21,15 @@ public class Controller33 {
 		category.getProductName().forEach(System.out::println);
 		
 	}
+	
+	/*
+SELECT 
+	s.SupplierID,
+    s.SupplierName,
+    p.ProductName
+FROM Products p JOIN Suppliers s ON p.SupplierID = s.SupplierID
+WHERE s.SupplierID = 1
+	 */
 }
 
 

@@ -22,6 +22,21 @@ public class Controller28 {
 	public void method2() {
 		System.out.println(mapper.getCustomerName());
 	}
+	
+	@RequestMapping("sub03")
+	public void method3() {
+		System.out.println(mapper.getEmployeeName());
+	}
+	
+	@RequestMapping("sub04")
+	public void method4() {
+		System.out.println(mapper.getProductName());
+	}
+	
+	@RequestMapping("sub05")
+	public void method5() {
+		System.out.println(mapper.getPrice());
+	}
 }
 
 

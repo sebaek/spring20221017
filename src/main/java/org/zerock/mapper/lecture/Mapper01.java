@@ -10,4 +10,19 @@ public interface Mapper01 {
 	@Select("SELECT CustomerName FROM w3schools.Customers WHERE CustomerId = 77")
 	public String getCustomerName();
 	
+	public String getEmployeeName();
+	
+	public String getProductName();
+	
+	public double getPrice();
 }
+
+
+
+
+
+
+
+
+
+

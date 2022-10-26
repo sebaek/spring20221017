@@ -6,6 +6,8 @@ import org.zerock.domain.lecture.JavaBean05;
 public interface Mapper03 {
 
 	JavaBean04 getCustomer();
+	
+	JavaBean04 getCustomer2();
 
 	JavaBean05 getEmployee();
 	

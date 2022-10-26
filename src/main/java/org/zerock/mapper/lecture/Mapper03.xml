@@ -33,6 +33,17 @@
 	FROM Employees
 	WHERE EmployeeID = 3	
 	</select>
+	
+	<!-- name -> JavaBean04.setName()  -->
+	<select id="getCustomer2" resultType="org.zerock.domain.lecture.JavaBean04">
+		SELECT 
+			CustomerName name 
+			Country
+		FROM 
+		    Customers
+		WHERE 
+		    CustomerId = 55
+	</select>
 </mapper>
 
 

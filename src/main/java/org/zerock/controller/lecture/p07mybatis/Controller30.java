@@ -39,6 +39,13 @@ public class Controller30 {
 		System.out.println(emp.getFirstName());
 		System.out.println(emp.getLastName());
 	}
+	
+	@RequestMapping("sub04")
+	public void method4() {
+		JavaBean04 cus = mapper.getCustomer2();
+		System.out.println(cus.getName());
+		System.out.println(cus.getCountry());
+	}
 }
 
 

@@ -46,6 +46,23 @@ public class Controller30 {
 		System.out.println(cus.getName());
 		System.out.println(cus.getCountry());
 	}
+	
+	@RequestMapping("sub05")
+	public void method5() {
+		/*
+		 * SELECT 
+		 *   ProductName,
+		 *   Price
+		 * FROM 
+		 *   Products
+		 * WHERE 
+		 *   ProductID = 8
+		 * 
+		 */
+		JavaBean06 prod = mapper.getProduct();
+		System.out.println(prod.getName());
+		System.out.println(prod.getPrice());
+	}
 }
 
 

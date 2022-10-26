@@ -10,4 +10,14 @@
 	
 	</select>
 	
+	<select id="getCustomerIds" resultType="int">
+	SELECT CustomerId 
+	FROM Customers
+	</select>
+	
 </mapper>
+
+
+
+
+

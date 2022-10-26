@@ -21,6 +21,23 @@ public class Controller29 {
 		System.out.println(names.get(0));
 		System.out.println(names.get(1));
 	}
+	
+	@RequestMapping("sub02")
+	public void method2() {
+		List<Integer> ids = mapper.getCustomerIds();
+		System.out.println(ids.size());
+		System.out.println(ids.get(0));
+		System.out.println(ids.get(1));
+	}
+	
+	@RequestMapping("sub03")
+	public void method3() {
+		List<Double> priceList = mapper.getProductPrices();
+		System.out.println(priceList.size());
+		System.out.println(priceList.get(0));
+		System.out.println(priceList.get(1));
+		
+	}
 }
 
 

@@ -16,7 +16,9 @@ WHERE c.CategoryId = 7
 	<resultMap type="org.zerock.domain.lecture.JavaBean11" id="categoryMap">
 		<id column="categoryId" property="id"/>
 		<result column="categoryName" property="name"/>
-		<collection property="productName" column="productName" ofType="string"></collection>
+		<collection property="productName" ofType="string">
+			<result column="productName"/>
+		</collection>
 	</resultMap>
 </mapper>
 

@@ -9,4 +9,14 @@ public interface Mapper09 {
 	String getEmployeeFirstNameById(int employeeId);
 	
 	List<String> getCustomerNameByCityAndCountry(String country, String city);
+
+	String getSupplierNameByCityAndCountry(String nation, String location);
 }
+
+
+
+
+
+
+
+

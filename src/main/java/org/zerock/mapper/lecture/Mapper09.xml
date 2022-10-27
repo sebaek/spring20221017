@@ -34,8 +34,21 @@ WHERE
 	City = #{city}
 	AND Country = #{country}
 	</select>
+	
+	
+	<select id="getSupplierNameByCityAndCountry" resultType="string">
+SELECT
+	SupplierName
+FROM
+	Suppliers
+WHERE
+	City = #{location}
+	AND Country = #{nation}
+	</select>
 
 </mapper>
+
+
 
 
 

@@ -68,13 +68,15 @@ WHERE
 	</select>
 	
 	<select id="getProductName" resultType="string">
+<![CDATA[
 SELECT 
 	ProductName
 FROM 
 	Products
 WHERE
-	CategoryId = #{b16.categoryId}
-    AND Price >= #{b17.price}
+	CategoryId = #{arg1.categoryId}
+    AND Price <= #{arg2.price}
+]]>
 	</select>
 </mapper>
 

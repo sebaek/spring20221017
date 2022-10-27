@@ -19,7 +19,30 @@
 	DELETE FROM Customers
 	WHERE CustomerID = #{id}
 	</delete>
+	
+	<delete id="removeEmployeeById">
+	DELETE FROM Employees
+	WHERE EmployeeID = #{id}
+	</delete>
+	
+	<insert id="addCustomer">
+	INSERT INTO Customers
+	(CustomerName, ContactName, Address, City, PostalCode, Country)
+	VALUES
+	('SON', 'HM', 'london', 'london', '111111', 'UK')
+	</insert>
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -36,5 +36,17 @@ public class Controller36 {
 		int cnt = mapper.removeEmployeeById(id);
 		System.out.println(cnt + "개 직원 레코드 삭제됨");
 	}
-
+	
+	
+	@RequestMapping("sub05")
+	public void metho5() {
+		int cnt = mapper.addCustomer();
+		System.out.println(cnt + "개 고객 정보 입력됨");
+	}
 }
+
+
+
+
+
+

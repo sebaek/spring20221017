@@ -8,4 +8,15 @@ public interface Mapper10 {
 	
 	int removeCustomerById(int id);
 
+	int removeEmployeeById(int id);
+	
+	int addCustomer();
+
 }
+
+
+
+
+
+
+

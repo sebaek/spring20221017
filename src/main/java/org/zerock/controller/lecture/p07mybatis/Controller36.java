@@ -43,6 +43,12 @@ public class Controller36 {
 		int cnt = mapper.addCustomer();
 		System.out.println(cnt + "개 고객 정보 입력됨");
 	}
+	
+	@RequestMapping("sub06")
+	public void method6() {
+		int cnt = mapper.addSupplier();
+		System.out.println(cnt + "개 공급자 정보 입력됨");
+	}
 }
 
 

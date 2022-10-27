@@ -61,7 +61,7 @@ public class Controller34 {
 	
 	@RequestMapping("sub04")
 	public void method4() {
-		mapper08.getEmployeeFirstName().forEach(System.out::println);
+		mapper8.getEmployeeFirstName().forEach(System.out::println);
 	}
 }
 

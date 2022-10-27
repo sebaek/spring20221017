@@ -28,6 +28,17 @@ WHERE
 		</collection>
 	</resultMap>
 
+	<select id="getSupplier" resultMap="supplierMap">
+	SELECT 
+		s.SupplierID,
+	    s.SupplierName,
+	    p.ProductId,
+	    p.ProductName,
+	    p.Price
+	FROM Products p JOIN Suppliers s ON p.SupplierID = s.SupplierID
+	WHERE s.SupplierID = 1	
+	</select>
+	
 </mapper>
 
 

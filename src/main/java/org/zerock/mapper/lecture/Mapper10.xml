@@ -9,5 +9,18 @@
 	DELETE FROM Customers
 	WHERE CustomerID = 91
 	</delete>
+	
+	<delete id="removeEmployee">
+	DELETE FROM Employees
+	WHERE EmployeeId = 1
+	</delete>
 
+	<delete id="removeCustomerById">
+	DELETE FROM Customers
+	WHERE CustomerID = #{id}
+	</delete>
 </mapper>
+
+
+
+

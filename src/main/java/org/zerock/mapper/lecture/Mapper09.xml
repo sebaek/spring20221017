@@ -52,8 +52,8 @@ SELECT
 FROM
 	Customers
 WHERE
-	CustomerName = #{bean1.name}
- AND Country = #{bean1.country}
+	CustomerName = #{name}
+ AND Country = #{country}
 	</select>
 
 </mapper>

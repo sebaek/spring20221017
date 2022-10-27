@@ -1,13 +1,15 @@
 package org.zerock.controller.lecture.p07mybatis;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.zerock.domain.lecture.JavaBean13;
 import org.zerock.domain.lecture.JavaBean14;
+import org.zerock.domain.lecture.JavaBean15;
 import org.zerock.mapper.lecture.Mapper07;
 
-import com.sun.tools.javac.util.List;
 
 @Controller
 @RequestMapping("ex34")

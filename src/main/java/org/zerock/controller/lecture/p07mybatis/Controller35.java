@@ -20,6 +20,19 @@ public class Controller35 {
 		System.out.println(name1);
 		System.out.println(name2);
 	}
+	
+	@RequestMapping("sub02")
+	public void method2() {
+		/*
+		 * SELECT FirstName FROM Employees WHERE EmployeeID = ?
+		 * 
+		 */
+		String name1 = mapper.getEmployeeFirstNameById(1);
+		String name2 = mapper.getEmployeeFirstNameById(2);
+		
+		System.out.println(name1);
+		System.out.println(name2);
+	}
 }
 
 

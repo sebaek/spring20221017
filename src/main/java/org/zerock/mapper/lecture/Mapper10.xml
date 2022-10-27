@@ -31,6 +31,20 @@
 	VALUES
 	('SON', 'HM', 'london', 'london', '111111', 'UK')
 	</insert>
+	
+	<insert id="addSupplier">
+	INSERT INTO Suppliers
+	(SupplierName, ContactName, Address, City, PostalCode, Country, Phone)
+	VALUES 
+	('Park', 'JISUNG', 'SEOUL', 'SEOUL', '3333333', 'KOREA', '01099999999')
+	</insert>
+	
+	<insert id="insertCustomer">
+	INSERT INTO Customers
+	(CustomerName, ContactName, Address, City, PostalCode, Country)
+	VALUES
+	(#{name}, #{contactName}, #{address}, #{city}, #{postalCode}, #{country})	
+	</insert>
 </mapper>
 
 

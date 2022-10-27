@@ -1,5 +1,7 @@
 package org.zerock.mapper.lecture;
 
+import org.zerock.domain.lecture.JavaBean18;
+
 public interface Mapper10 {
 	
 	int removeCustomer();
@@ -12,7 +14,16 @@ public interface Mapper10 {
 	
 	int addCustomer();
 
+	int addSupplier();
+	
+	int insertCustomer(JavaBean18 customer);
+
 }
+
+
+
+
+
 
 
 

@@ -2,8 +2,11 @@ package org.zerock.controller.lecture.p07mybatis;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.zerock.domain.lecture.JavaBean18;
 import org.zerock.mapper.lecture.Mapper10;
 
 @Configuration
@@ -48,6 +51,18 @@ public class Controller36 {
 	public void method6() {
 		int cnt = mapper.addSupplier();
 		System.out.println(cnt + "개 공급자 정보 입력됨");
+	}
+	
+	@GetMapping("sub07")
+	public void customerForm() {
+		
+	}
+	
+	@PostMapping("sub07")
+	public void method7(JavaBean18 customer) {
+		int cnt = mapper.insertCustomer(customer);
+		
+		System.out.println(cnt + "개 고객 정보 입력됨");
 	}
 }
 

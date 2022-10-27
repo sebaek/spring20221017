@@ -64,6 +64,17 @@ public class Controller35 {
 		String c1 = mapper.getContactName(p);
 		System.out.println(c1);
 	}
+	
+	// /ex35/sub06?name=New Orleans Cajun Delights&country=USA
+	// ---> Shelley Burke
+	
+	// /ex35/sub06?name=Grandma Kelly's Homestead&country=USA
+	// ---> Regina Murphy
+	@RequestMapping("sub06")
+	public void method6(JavaBean04 b) {
+		String c = mapper.getSupplierContactName(b);
+		System.out.println(c);
+	}
 }
 
 

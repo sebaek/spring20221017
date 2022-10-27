@@ -45,6 +45,16 @@ WHERE
 	City = #{location}
 	AND Country = #{nation}
 	</select>
+	
+	<select id="getContactName" resultType="string">
+SELECT
+	ContactName
+FROM
+	Customers
+WHERE
+	CustomerName = #{bean1.name}
+ AND Country = #{bean1.country}
+	</select>
 
 </mapper>
 

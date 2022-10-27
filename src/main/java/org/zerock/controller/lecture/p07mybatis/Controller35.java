@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.zerock.domain.lecture.JavaBean04;
 import org.zerock.mapper.lecture.Mapper09;
 
 @Controller
@@ -52,6 +53,16 @@ public class Controller35 {
 		
 		System.out.println(londona); // Exotic Liquid
 		System.out.println(newOl); // New Orleans Cajun Delights
+	}
+	
+	// /ex35/sub05?name=Alfreds Futterkiste&country=Germany
+	// ---> Maria Anders
+	// /ex35/sub05?name=Antonio Moreno Taquería&country=Mexico
+	// ---> Antonio Moreno
+	@RequestMapping("sub05")
+	public void method5(JavaBean04 p) {
+		String c1 = mapper.getContactName(p);
+		System.out.println(c1);
 	}
 }
 

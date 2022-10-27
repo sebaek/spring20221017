@@ -38,8 +38,8 @@ public class Controller35 {
 	
 	@RequestMapping("sub03")
 	public void method3() {
-		List<String> berlin = mapper.getCustomerNameByCityAndCountry("Berlin", "Germany");
-		List<String> london = mapper.getCustomerNameByCityAndCountry("London", "UK");
+		List<String> berlin = mapper.getCustomerNameByCityAndCountry("Germany", "Berlin");
+		List<String> london = mapper.getCustomerNameByCityAndCountry("UK", "London");
 		
 		System.out.println(berlin);
 		System.out.println(london);

@@ -8,5 +8,5 @@ public interface Mapper09 {
 
 	String getEmployeeFirstNameById(int employeeId);
 	
-	List<String> getCustomerNameByCityAndCountry(String city, String country);
+	List<String> getCustomerNameByCityAndCountry(String country, String city);
 }

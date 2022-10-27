@@ -44,6 +44,15 @@ public class Controller35 {
 		System.out.println(berlin);
 		System.out.println(london);
 	}
+	
+	@RequestMapping("sub04")
+	public void method4() {
+		String londona = mapper.getSupplierNameByCityAndCountry("UK", "Londona");
+		String newOl = mapper.getSupplierNameByCityAndCountry("USA", "New Orleans");
+		
+		System.out.println(londona); // Exotic Liquid
+		System.out.println(newOl); // New Orleans Cajun Delights
+	}
 }
 
 

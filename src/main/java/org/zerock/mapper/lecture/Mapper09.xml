@@ -14,8 +14,35 @@ FROM
 WHERE
 	CustomerID = #{id}
 	</select>
+	
+	<select id="getEmployeeFirstNameById" resultType="string">
+SELECT 
+	FirstName
+FROM
+	Employees
+WHERE
+	EmployeeId = #{employeeId}
+	
+	</select>
+	
+	<select id="getCustomerNameByCityAndCountry" resultType="string">
+SELECT 
+	CustomerName
+FROM
+	Customers
+WHERE
+	City = #{city}
+	AND Country = #{country}
+	</select>
 
 </mapper>
+
+
+
+
+
+
+
 
 
 

@@ -1,5 +1,7 @@
 package org.zerock.controller.lecture.p07mybatis;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +34,15 @@ public class Controller35 {
 		
 		System.out.println(name1);
 		System.out.println(name2);
+	}
+	
+	@RequestMapping("sub03")
+	public void method3() {
+		List<String> berlin = mapper.getCustomerNameByCityAndCountry("Berlin", "Germany");
+		List<String> london = mapper.getCustomerNameByCityAndCountry("London", "UK");
+		
+		System.out.println(berlin);
+		System.out.println(london);
 	}
 }
 

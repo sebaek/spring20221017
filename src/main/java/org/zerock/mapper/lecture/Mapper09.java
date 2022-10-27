@@ -15,6 +15,8 @@ public interface Mapper09 {
 	String getSupplierNameByCityAndCountry(String nation, String location);
 	
 	String getContactName(JavaBean04 bean1);
+
+	String getSupplierContactName(JavaBean04 b);
 }
 
 

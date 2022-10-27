@@ -56,6 +56,16 @@ WHERE
  AND Country = #{country}
 	</select>
 
+	<select id="getSupplierContactName" resultType="string">
+SELECT 
+	ContactName
+FROM 
+	Suppliers
+WHERE
+	    SupplierName = #{name}
+	AND Country = #{country}
+	
+	</select>
 </mapper>
 
 

@@ -9,6 +9,7 @@ import org.zerock.domain.lecture.JavaBean13;
 import org.zerock.domain.lecture.JavaBean14;
 import org.zerock.domain.lecture.JavaBean15;
 import org.zerock.mapper.lecture.Mapper07;
+import org.zerock.mapper.lecture.Mapper08;
 
 
 @Controller
@@ -17,6 +18,9 @@ public class Controller34 {
 
 	@Autowired
 	private Mapper07 mapper;
+	
+	@Autowired
+	private Mapper08 mapper8;
 	
 	@RequestMapping("sub01")
 	public void method1() {
@@ -43,6 +47,21 @@ public class Controller34 {
 			System.out.println(p.getPrice());
 		});
 		
+	}
+	
+	// 쿼리에서 특수기호(<, >)처리
+	@RequestMapping("sub03")
+	public void method3() {
+		System.out.println("####### entity 로 해결 #########");
+		mapper8.getProductName().forEach(System.out::println);
+		
+		System.out.println("####### CDATA 요소로 해결 #########");
+		mapper8.getProductName2().forEach(System.out::println);
+	}
+	
+	@RequestMapping("sub04")
+	public void method4() {
+		mapper08.getEmployeeFirstName().forEach(System.out::println);
 	}
 }
 

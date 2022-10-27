@@ -19,6 +19,7 @@ public class Controller34 {
 		System.out.println(category.getId());
 		System.out.println(category.getName());
 		category.getProduct().forEach(p -> {
+			System.out.println(p.getId());
 			System.out.println(p.getName());
 			System.out.println(p.getPrice());
 		});

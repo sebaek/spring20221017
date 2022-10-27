@@ -9,6 +9,7 @@
 SELECT 
 	c.CategoryId,
     c.CategoryName,
+    p.ProductId,
     p.ProductName,
     p.Price
 FROM 
@@ -21,6 +22,7 @@ WHERE
 		<id column="categoryId" property="id"></id>
 		<result column="categoryName" property="name"/>
 		<collection property="product" ofType="org.zerock.domain.lecture.JavaBean14">
+			<id column="productId" property="id"></id>
 			<result column="productName" property="name"/>
 			<result column="price" property="price"/>
 		</collection>

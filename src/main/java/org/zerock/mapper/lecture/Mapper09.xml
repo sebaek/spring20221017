@@ -66,6 +66,16 @@ WHERE
 	AND Country = #{country}
 	
 	</select>
+	
+	<select id="getProductName" resultType="string">
+SELECT 
+	ProductName
+FROM 
+	Products
+WHERE
+	CategoryId = #{b16.categoryId}
+    AND Price >= #{b17.price}
+	</select>
 </mapper>
 
 

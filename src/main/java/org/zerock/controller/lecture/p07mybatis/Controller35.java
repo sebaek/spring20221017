@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.zerock.domain.lecture.JavaBean04;
+import org.zerock.domain.lecture.JavaBean16;
+import org.zerock.domain.lecture.JavaBean17;
 import org.zerock.mapper.lecture.Mapper09;
 
 @Controller
@@ -74,6 +76,17 @@ public class Controller35 {
 	public void method6(JavaBean04 b) {
 		String c = mapper.getSupplierContactName(b);
 		System.out.println(c);
+	}
+	
+	// /ex35/sub07?categoryId=1&price=10.00
+	
+	// /ex35/sub07?categoryId=2&price=20.00
+	
+	@RequestMapping("sub07")
+	public void method7(JavaBean16 p1, JavaBean17 p2) {
+		
+		List<String> list = mapper.getProductName(p1, p2);
+		list.forEach(System.out::println);
 	}
 }
 

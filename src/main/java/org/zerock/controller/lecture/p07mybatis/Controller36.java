@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.zerock.domain.lecture.JavaBean18;
+import org.zerock.domain.lecture.JavaBean19;
 import org.zerock.mapper.lecture.Mapper10;
 
 @Configuration
@@ -67,13 +68,18 @@ public class Controller36 {
 	
 	@GetMapping("sub08")
 	public void supplierForm() {
-		
+		// forward to /WEB-INF/views/ex36/sub08.jsp
 	}
 	
 	@PostMapping("sub08")
 	public void method8(JavaBean19 supplier) {
+		// 1. req param 수집/가공
+		// 2. business logic 
 		int cnt = mapper.insertSupplier(supplier);
 		System.out.println(cnt + "개 공급자 정보 입력됨");
+		
+		// 3. add attribute
+		// 4. forward/ redirect
 	}
 }
 

@@ -45,6 +45,13 @@
 	VALUES
 	(#{name}, #{contactName}, #{address}, #{city}, #{postalCode}, #{country})	
 	</insert>
+	
+	<insert id="insertSupplier">
+	INSERT INTO Suppliers
+	(SupplierName, ContactName, Address, City, PostalCode, Country, Phone)
+	VALUES
+	(#{name}, #{contactName}, #{address}, #{city}, #{postalCode}, #{country}, #{phone})
+	</insert>
 </mapper>
 
 

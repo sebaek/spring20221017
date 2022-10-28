@@ -104,17 +104,19 @@ public class Controller36 {
 	@GetMapping("sub10")
 	public String method10() {
 		// forward to /WEB-INF/views/ex36/sub08.jsp
-		return null;
+		return "ex36/sub08";
 	}
 	
 	@PostMapping("sub10")
-	public String postMethod10() {
+	public String postMethod10(JavaBean19 supplier, RedirectAttributes rttr) {
 		// 1. request parameter 수집 : JavaBean19에
 		// 2. business logic : Suppliers 테이블에 레코드 입력 AND generated key 얻기
+		int cnt = mapper.insertSupplierAndKey(supplier);
 		
 		// 3. add attribute : (message : id번 공급자 입력되었습니다.)
+		rttr.addFlashAttribute("message", supplier.getId() + "번 공급자 입력되었습니다");
 		// 4. redirect : /ex36/sub10
-		return null;
+		return "redirect:/ex36/sub10";
 	}
 	
 }

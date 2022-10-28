@@ -43,6 +43,11 @@ public class Controller37 {
 		// 4. 리다이렉트
 		return "redirect:/ex37/sub01";
 	}
+	
+	// 공급자정보 변경 코드 작성
+	// 경로 : sub02
+	// 빈 : JavaBean19
+	
 }
 
 

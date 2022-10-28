@@ -22,7 +22,12 @@
 	</bean>
 	
 	<context:property-placeholder location="/WEB-INF/props/jdbc.properties" />
+	
+	<!-- mapper 스캔 -->
 	<mybatis-spring:scan base-package="org.zerock.mapper"/>
+	
+	<!-- service 스캔 -->
+	<context:component-scan base-package="org.zerock.service"></context:component-scan>
 </beans>
 
 

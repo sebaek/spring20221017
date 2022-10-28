@@ -60,6 +60,13 @@ SET
 WHERE
 	SupplierId = #{id}	
 	</update>	
+	
+	<update id="updateBank">
+UPDATE Bank
+SET balance = balance + (#{money})
+WHERE 
+	account = #{account}
+	</update>
 </mapper>
 
 

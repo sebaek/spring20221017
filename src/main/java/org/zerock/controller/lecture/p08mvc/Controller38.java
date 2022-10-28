@@ -25,6 +25,18 @@ public class Controller38 {
 		
 		// 포워드/리다이렉트
 	}
+	
+	@RequestMapping("sub02")
+	public void method2() {
+		// 리퀘스트 파람 수집/가공
+		
+		// 비지니스 로직
+		service.transferMoney();
+		
+		// 모델에 추가
+		
+		// 포워드/리다이렉트
+	}
 }
 
 

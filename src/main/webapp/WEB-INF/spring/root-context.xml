@@ -30,6 +30,9 @@
 	
 	<!-- service 스캔 -->
 	<context:component-scan base-package="org.zerock.service"></context:component-scan>
+	
+	<!-- transaction 처리 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"></bean>
 </beans>
 
 

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.domain.lecture.JavaBean18;
+import org.zerock.domain.lecture.JavaBean19;
 import org.zerock.mapper.lecture.Mapper11;
 
 @Controller
@@ -47,7 +48,23 @@ public class Controller37 {
 	// 공급자정보 변경 코드 작성
 	// 경로 : sub02
 	// 빈 : JavaBean19
+	@GetMapping("sub02")
+	public void getMethod2(Integer id, Model model) {
+		// id 파라미터 받고
+		// 공급자정보 조회
+		JavaBean19 supplier = mapper.getSupplierById(id);
+		// 모델에 공급자정보 넣고
+		model.addAttribute("supplier", supplier);
+		// 포워드
+	}
 	
+	@PostMapping("sub02")
+	public String postMethod2(JavaBean19 supplier, RedirectAttributes rttr) {
+		int cnt = mapper.updateSupplier(supplier);
+		
+		rttr.addAttribute("id", supplier.getId());
+		return "redirect:/ex37/sub02";
+	}
 }
 
 

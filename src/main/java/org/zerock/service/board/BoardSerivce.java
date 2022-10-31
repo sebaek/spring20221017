@@ -1,5 +1,7 @@
 package org.zerock.service.board;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.zerock.domain.board.BoardDto;
@@ -14,5 +16,15 @@ public class BoardSerivce {
 	public void register(BoardDto board) {
 		mapper.insert(board);
 	}
+
+	public List<BoardDto> listBoard() {
+		// TODO Auto-generated method stub
+		return mapper.list();
+	}
 	
 }
+
+
+
+
+

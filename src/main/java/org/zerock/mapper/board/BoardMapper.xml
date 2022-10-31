@@ -10,5 +10,18 @@
 	VALUES (#{title}, #{content}, #{writer})
 	
 	</insert>
+	
+	<select id="list" resultType="org.zerock.domain.board.BoardDto">
+	SELECT 
+		id,
+		title,
+		writer,
+		inserted
+	FROM Board
+	ORDER BY id DESC
+	</select>
 
 </mapper>
+
+
+

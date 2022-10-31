@@ -1,5 +1,6 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ attribute name="active" %>
 
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
@@ -11,11 +12,11 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <c:url value="/board/list" var="listLink" />
-          <a class="nav-link active" href="${listLink }">목록</a>
+          <a class="nav-link ${active eq 'list' ? 'active' : '' }" href="${listLink }">목록</a>
         </li>
         <li class="nav-item">
           <c:url value="/board/register" var="registerLink" />
-          <a class="nav-link" href="${registerLink }">작성</a>
+          <a class="nav-link ${active eq 'register' ? 'active' : '' }" href="${registerLink }">작성</a>
         </li>
         
       </ul>

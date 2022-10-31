@@ -24,7 +24,14 @@
 			<c:forEach items="${boardList}" var="board">
 				<tr>
 					<td>${board.id }</td>
-					<td>${board.title }</td>
+					<td>
+						<c:url value="/board/get" var="getLink">
+							<c:param name="id" value="${board.id }"></c:param>
+						</c:url>
+						<a href="${getLink }">
+							${board.title }
+						</a>
+					</td>
 					<td>${board.writer }</td>
 					<td>${board.inserted }</td>
 				</tr>

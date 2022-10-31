@@ -43,6 +43,11 @@
 	WHERE
 		id = #{id}
 	</update>
+	
+	<delete id="delete">
+	DELETE FROM Board
+	WHERE id = #{id}
+	</delete>
 
 </mapper>
 

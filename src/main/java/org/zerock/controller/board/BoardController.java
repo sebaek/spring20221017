@@ -76,6 +76,13 @@ public class BoardController {
 		return "redirect:/board/list";
 	}
 	
+	@PostMapping("remove")
+	public String remove(int id) {
+		service.remove(id);
+		
+		return "redirect:/board/list";
+	}
+	
 	
 }
 

@@ -31,6 +31,10 @@ public class BoardSerivce {
 		
 		return mapper.update(board);	
 	}
+
+	public int remove(int id) {
+		return mapper.delete(id);
+	}
 	
 }
 

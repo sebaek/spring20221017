@@ -24,10 +24,34 @@
 			<i class="fa-solid fa-pen-to-square"></i>
 		</a>
 	</h1>
-	제목 <input type="text" value="${board.title }" readonly> <br>
-	본문 <textarea readonly>${board.content }</textarea> <br>
-	작성자 <input type="text" value="${board.writer }" readonly> <br>
-	작성일시 <input type="datetime-local" value="${board.inserted }" readonly>
+
+	<div class="mb-3">
+		<label class="form-label">
+			제목 
+		</label>
+		<input class="form-control" type="text" value="${board.title }" readonly>
+	</div>	
+	
+	<div class="mb-3">
+		<label for="" class="form-label">
+		본문 
+		</label>
+		<textarea rows="5" class="form-control" readonly>${board.content }</textarea>
+	</div>
+	
+	<div class="mb-3">
+		<label for="" class="form-label">
+			작성자 
+		</label>
+		<input class="form-control" type="text" value="${board.writer }" readonly>
+	</div>
+	
+	<div class="mb-3">
+		<label for="" class="form-label">
+			작성일시 
+		</label>
+		<input class="form-control" type="datetime-local" value="${board.inserted }" readonly>
+	</div>
 	
 	<br>
 	

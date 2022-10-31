@@ -16,6 +16,9 @@
 	
 	본문 <textarea name="content"></textarea> <br>
 	
+	작성자 <input type="text" name="writer"> <br>
+	
+	
 	<input type="submit" value="등록">
 	
 	

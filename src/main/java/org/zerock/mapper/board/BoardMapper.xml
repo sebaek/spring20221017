@@ -6,8 +6,8 @@
 <mapper namespace="org.zerock.mapper.board.BoardMapper">
 
 	<insert id="insert">
-	INSERT INTO Board (title, content)
-	VALUES (#{title}, #{content})
+	INSERT INTO Board (title, content, writer)
+	VALUES (#{title}, #{content}, #{writer})
 	
 	</insert>
 

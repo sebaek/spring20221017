@@ -77,8 +77,14 @@ public class BoardController {
 	}
 	
 	@PostMapping("modify")
-	public String modify(BoardDto board) {
-		service.update(board);
+	public String modify(BoardDto board, RedirectAttributes rttr) {
+		int cnt = service.update(board);
+		
+		if (cnt == 1) {
+			rttr.addFlashAttribute("message", board.getId() + "번 게시물이 수정되었습니다.");
+		} else {
+			rttr.addFlashAttribute("message", board.getId() + "번 게시물이 수정되지 않았습니다.");
+		}
 		
 		return "redirect:/board/list";
 	}

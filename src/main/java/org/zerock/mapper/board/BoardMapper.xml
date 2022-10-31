@@ -33,6 +33,16 @@
 	WHERE
 		id = #{id}
 	</select>
+	
+	<update id="update">
+	UPDATE Board
+	SET
+		title = #{title},
+		content = #{content},
+		writer = #{writer}
+	WHERE
+		id = #{id}
+	</update>
 
 </mapper>
 

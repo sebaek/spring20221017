@@ -13,8 +13,8 @@ public class BoardSerivce {
 	@Autowired
 	private BoardMapper mapper;
 	
-	public void register(BoardDto board) {
-		mapper.insert(board);
+	public int register(BoardDto board) {
+		return mapper.insert(board);
 	}
 
 	public List<BoardDto> listBoard() {
@@ -25,6 +25,11 @@ public class BoardSerivce {
 	public BoardDto get(int id) {
 		// TODO Auto-generated method stub
 		return mapper.select(id);
+	}
+
+	public int update(BoardDto board) {
+		
+		return mapper.update(board);	
 	}
 	
 }

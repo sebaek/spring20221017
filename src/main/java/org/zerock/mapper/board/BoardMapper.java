@@ -13,7 +13,13 @@ public interface BoardMapper {
 
 	BoardDto select(int id);
 
+	int update(BoardDto board);
+
 }
+
+
+
+
 
 
 

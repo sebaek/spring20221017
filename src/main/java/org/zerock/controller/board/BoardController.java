@@ -62,6 +62,20 @@ public class BoardController {
 		
 	}
 	
+	@GetMapping("modify")
+	public void modify(int id, Model model) {
+		BoardDto board = service.get(id);
+		model.addAttribute("board", board);
+		
+	}
+	
+	@PostMapping("modify")
+	public String modify(BoardDto board) {
+		service.update(board);
+		
+		return "redirect:/board/list";
+	}
+	
 	
 }
 

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.domain.board.BoardDto;
 import org.zerock.service.board.BoardSerivce;
 
@@ -26,11 +27,17 @@ public class BoardController {
 	}
 	
 	@PostMapping("register")
-	public String register(BoardDto board) {
+	public String register(BoardDto board, RedirectAttributes rttr) {
 		// request param 수집/가공
 		
 		// business logic
-		service.register(board);
+		int cnt = service.register(board);
+		
+		if (cnt == 1) {
+			rttr.addFlashAttribute("message", "새 게시물이 등록되었습니다.");
+		} else {
+			rttr.addFlashAttribute("message", "새 게시물이 등록되지 않았습니다.");
+		}
 		
 		// /board/list로 redirect
 		return "redirect:/board/list";
@@ -79,6 +86,10 @@ public class BoardController {
 	@PostMapping("remove")
 	public String remove(int id) {
 		service.remove(id);
+		
+		// id번 게시물이 삭제되었습니다.
+		
+		// id번 게시물이 삭제되지 않았습니다.
 		
 		return "redirect:/board/list";
 	}

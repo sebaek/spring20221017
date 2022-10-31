@@ -51,13 +51,13 @@ public class BoardController {
 	@GetMapping("get") 
 	public void get(
 			// @RequestParam 생략 가능
-			@RequestParam(name = "id") int id) {
+			@RequestParam(name = "id") int id,
+			Model model) {
 		// req param
 		// business logic (게시물 db에서 가져오기)
 		BoardDto board = service.get(id);
-		System.out.println(board);
 		// add attribute
-//		model.addAttribute("board", board);
+		model.addAttribute("board", board);
 		// forward
 		
 	}

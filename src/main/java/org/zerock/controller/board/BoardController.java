@@ -22,12 +22,19 @@ public class BoardController {
 	}
 	
 	@PostMapping("register")
-	public void register(BoardDto board) {
+	public String register(BoardDto board) {
 		// request param 수집/가공
-		System.out.println(board);
 		
 		// business logic
 		service.register(board);
+		
+		// /board/list로 redirect
+		return "redirect:/board/list";
+	}
+	
+	@GetMapping("list")
+	public void list() {
+		// 
 	}
 	
 	

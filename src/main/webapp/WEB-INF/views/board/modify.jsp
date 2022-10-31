@@ -14,7 +14,7 @@
 	<my:navBar></my:navBar>
 	<h1>${board.id }번 게시물 수정</h1>
 	
-	<form action="" method="post">
+	<form id="modifyForm" action="" method="post">
 	<input type="hidden" name="id" value="${board.id }">
 	제목 <input type="text" name="title" value="${board.title }"> <br>
 	본문 <textarea name="content">${board.content }</textarea> <br>
@@ -42,8 +42,8 @@
 	        ...
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary">Save changes</button>
+	        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+	        <button id="modifyConfirmButton" type="button" class="btn btn-primary">확인</button>
 	      </div>
 	    </div>
 	  </div>
@@ -51,6 +51,11 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script>
+	document.querySelector("#modifyConfirmButton").addEventListener("click", function() {
+		document.querySelector("#modifyForm").submit();
+	});
+</script>
 </body>
 </html>
 

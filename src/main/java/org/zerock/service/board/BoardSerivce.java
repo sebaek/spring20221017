@@ -21,6 +21,11 @@ public class BoardSerivce {
 		// TODO Auto-generated method stub
 		return mapper.list();
 	}
+
+	public BoardDto get(int id) {
+		// TODO Auto-generated method stub
+		return mapper.select(id);
+	}
 	
 }
 

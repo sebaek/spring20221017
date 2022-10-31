@@ -20,8 +20,27 @@
 	FROM Board
 	ORDER BY id DESC
 	</select>
+	
+	<select id="select" resultType="org.zerock.domain.board.BoardDto">
+	SELECT
+		id,
+		title,
+		content,
+		writer,
+		inserted
+	FROM
+		Board
+	WHERE
+		id = #{id}
+	</select>
 
 </mapper>
+
+
+
+
+
+
 
 
 

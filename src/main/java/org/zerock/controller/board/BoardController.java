@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.zerock.domain.board.BoardDto;
 import org.zerock.service.board.BoardSerivce;
 
@@ -44,6 +45,21 @@ public class BoardController {
 		// add attribute
 		model.addAttribute("boardList", list);
 		// forward
+	}
+	
+	
+	@GetMapping("get") 
+	public void get(
+			// @RequestParam 생략 가능
+			@RequestParam(name = "id") int id) {
+		// req param
+		// business logic (게시물 db에서 가져오기)
+		BoardDto board = service.get(id);
+		System.out.println(board);
+		// add attribute
+//		model.addAttribute("board", board);
+		// forward
+		
 	}
 	
 	

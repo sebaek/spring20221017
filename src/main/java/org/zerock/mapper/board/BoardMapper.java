@@ -11,4 +11,10 @@ public interface BoardMapper {
 
 	List<BoardDto> list();
 
+	BoardDto select(int id);
+
 }
+
+
+
+

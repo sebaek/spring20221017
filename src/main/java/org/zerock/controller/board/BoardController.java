@@ -84,12 +84,16 @@ public class BoardController {
 	}
 	
 	@PostMapping("remove")
-	public String remove(int id) {
-		service.remove(id);
+	public String remove(int id, RedirectAttributes rttr) {
+		int cnt = service.remove(id);
 		
-		// id번 게시물이 삭제되었습니다.
-		
-		// id번 게시물이 삭제되지 않았습니다.
+		if (cnt == 1) {
+			// id번 게시물이 삭제되었습니다.
+			rttr.addFlashAttribute("message", id + "번 게시물이 삭제되었습니다.");
+		} else {
+			// id번 게시물이 삭제되지 않았습니다.
+			rttr.addFlashAttribute("message", id + "번 게시물이 삭제되지 않았습니다.");
+		}
 		
 		return "redirect:/board/list";
 	}

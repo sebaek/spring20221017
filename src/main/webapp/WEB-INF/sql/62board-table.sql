@@ -7,8 +7,15 @@ CREATE TABLE Board (
 );
 SELECT * FROM Board ORDER BY 1 DESC;
 
+-- 작성자 컬럼 추가
 ALTER TABLE Board
 ADD COLUMN writer VARCHAR(255) NOT NULL;
 DESC Board;
+
+-- 작성일시 컬럼 추가
+ALTER Table Board
+ADD COLUMN inserted DATETIME NOT NULL DEFAULT NOW();
+
+
 
 

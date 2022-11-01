@@ -21,6 +21,8 @@ public class BoardSerivce {
 		int records = 10;
 		int offset = (page - 1) * records;
 		
+		int countAll = mapper.countAll(); // SELECT Count(*) FROM Board
+		
 		return mapper.list(offset, records);
 	}
 

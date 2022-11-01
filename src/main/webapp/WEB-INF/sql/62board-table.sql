@@ -23,7 +23,14 @@ SELECT title, content, writer FROM Board;
 
 SELECT COUNT(*) FROM Board;
 
-
+-- page 처리 쿼리
+SELECT
+	*
+FROM
+	Board
+ORDER BY id DESC
+LIMIT 20, 10; -- ?1 : 어디서부터(0-base), 
+              -- ?2 : 몇 개
 
 
 

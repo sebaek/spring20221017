@@ -17,5 +17,18 @@ ALTER Table Board
 ADD COLUMN inserted DATETIME NOT NULL DEFAULT NOW();
 
 
+-- 여러 게시물 추가하기
+INSERT INTO Board (title, content, writer)
+SELECT title, content, writer FROM Board;
+
+SELECT COUNT(*) FROM Board;
+
+
+
+
+
+
+
+
 
 

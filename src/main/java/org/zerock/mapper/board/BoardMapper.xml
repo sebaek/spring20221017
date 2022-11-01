@@ -19,6 +19,7 @@
 		inserted
 	FROM Board
 	ORDER BY id DESC
+	LIMIT #{offset}, #{records}
 	</select>
 	
 	<select id="select" resultType="org.zerock.domain.board.BoardDto">

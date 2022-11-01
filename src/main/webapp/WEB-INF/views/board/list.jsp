@@ -59,8 +59,8 @@
 		<!-- .row>.col -->
 		<div class="row">
 			<div class="col">
-				<nav aria-label="Page navigation example">
-				  <ul class="pagination">
+				<nav class="mt-3" aria-label="Page navigation example">
+				  <ul class="pagination justify-content-center">
 				  
 				  	<%-- 맨앞 버튼은 1페이지가 아니면 존재함 --%>
 				  	<c:if test="${pageInfo.currentPageNumber ne 1 }">

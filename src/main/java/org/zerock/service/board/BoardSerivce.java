@@ -27,7 +27,9 @@ public class BoardSerivce {
 		
 		int leftPageNumber = (page - 1) / 10 * 10 + 1;
 		int rightPageNumber = leftPageNumber + 9;
+		rightPageNumber = Math.min(rightPageNumber, lastPage);
 		
+		pageInfo.setCurrentPageNumber(page);
 		pageInfo.setLeftPageNumber(leftPageNumber);
 		pageInfo.setRightPageNumber(rightPageNumber);
 		pageInfo.setLastPageNumber(lastPage);

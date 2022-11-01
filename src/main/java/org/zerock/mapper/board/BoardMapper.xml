@@ -5,6 +5,10 @@
   
 <mapper namespace="org.zerock.mapper.board.BoardMapper">
 
+	<select id="countAll" resultType="int">
+	SELECT COUNT(*) FROM Board
+	</select>
+
 	<insert id="insert">
 	INSERT INTO Board (title, content, writer)
 	VALUES (#{title}, #{content}, #{writer})

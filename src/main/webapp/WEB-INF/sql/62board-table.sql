@@ -32,7 +32,12 @@ ORDER BY id DESC
 LIMIT 20, 10; -- ?1 : 어디서부터(0-base), 
               -- ?2 : 몇 개
 
-
+-- 검색 쿼리
+SELECT * 
+FROM Board
+WHERE title LIKE '%프링%'
+   OR content LIKE '%프링%'
+   OR writer LIKE '%프링%';
 
 
 

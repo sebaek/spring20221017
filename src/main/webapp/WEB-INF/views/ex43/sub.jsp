@@ -44,6 +44,9 @@
 	<br>
 	<button id="btn7">/ex43/sub07 post 요청 </button>
 	
+	<br>
+	<button id="btn8">/ex43/sub08 post 요청 #form2에 있는 데이터 활용</button>
+	
 	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>

@@ -12,7 +12,44 @@
 </head>
 <body>
 	<h1>json format data 전송</h1>
-
+	<button id="btn1">/ex44/sub01 post 요청 w/ data</button>
+	<br>
+	<button id="btn2">/ex44/sub02 post 요청 w/ data text/plain</button>
+	<br>
+	<button id="btn3">/ex44/sub02 post 요청 w/ data application/json</button>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script>
+const ctx = "${pageContext.request.contextPath}";
+
+document.querySelector("#btn3").addEventListener("click", function() {
+	fetch(ctx + "/ex44/sub03", {
+		method: "post",
+		headers : {
+			"Content-Type" : "application/json"
+		},
+		body : '{"name":"son", "address":"seoul"}'
+	});
+});
+
+document.querySelector("#btn2").addEventListener("click", function() {
+	fetch(ctx + "/ex44/sub02", {
+		method: "post",
+		body : '{"name":"son", "address":"seoul"}'
+	});
+});
+
+document.querySelector("#btn1").addEventListener("click", function() {
+	fetch(ctx + "/ex44/sub01", {
+		method: "post",
+		body : '{"name":"son", "address":"seoul"}'
+	});
+});
+</script>
 </body>
 </html>
+
+
+
+
+
+

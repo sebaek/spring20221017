@@ -15,11 +15,32 @@
 	<button id="btn1">/ex41/sub01 get, 헤더 추가</button>
 	
 	<br>
-	
+
 	<button id="btn2">/ex41/sub02 get, 헤더 추가 (YourHeader : "Your Header Value")</button>
+	
+	<br>
+	<button id="btn3">/ex41/sub03 헤더 추가 (Your-Header, My-Header)</button>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 	const ctx = "${pageContext.request.contextPath}";
+	document.querySelector("#btn3").addEventListener("click", function() {
+		fetch(ctx + "/ex41/sub03", {
+			method : "get",
+			headers : {
+				"Your-Header" : "Your Header Value"
+			}
+		});
+	});
+	
+	document.querySelector("#btn2").addEventListener("click", function() {
+		fetch(ctx + "/ex41/sub02", {
+			method : "get",
+			headers : {
+				YourHeader : "Your Header Value", 
+				MyHeader : "My Value",
+			}
+		});
+	});
 	
 	document.querySelector("#btn1").addEventListener("click", function(){
 		fetch(ctx + "/ex41/sub01", {

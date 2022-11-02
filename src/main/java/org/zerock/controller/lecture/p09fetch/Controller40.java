@@ -1,8 +1,10 @@
 package org.zerock.controller.lecture.p09fetch;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -37,6 +39,18 @@ public class Controller40 {
 	@PostMapping("sub04")
 	public void method5() {
 		System.out.println("/ex40/sub04 post 방식 요청 잘 받음**********");
+	}
+	
+//	@RequestMapping(path = "sub04", method = RequestMethod.PUT)
+	@PutMapping("sub04")
+	public void method6() {
+		System.out.println("/ex40/sub04 put 방식 요청 잘 받음!@!@!@");
+	}
+	
+//	@RequestMapping(path = "sub04", method = RequestMethod.DELETE)
+	@DeleteMapping("sub04")
+	public void method7() {
+		System.out.println("/ex40/sub04 delete 방식 요청 잘 받음#!%!%!!@#%");
 	}
 }
 

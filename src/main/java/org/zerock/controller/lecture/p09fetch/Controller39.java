@@ -11,4 +11,18 @@ public class Controller39 {
 	public void method1() {
 		
 	}
+	
+	@RequestMapping("sub02")
+	public void method2() {
+		System.out.println("/ex39/sub02 요청 잘 받음");
+	}
 }
+
+
+
+
+
+
+
+
+

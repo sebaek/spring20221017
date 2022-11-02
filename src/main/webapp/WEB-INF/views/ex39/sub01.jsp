@@ -13,13 +13,25 @@
 <body>
 	<h1>ajax / fecth / xhr 요청</h1>
 	
-	<button id="btn1">버튼1</button>
+	<button id="btn1">버튼1</button> 
+	<br>
+	<button id="btn2">버튼2 fetch 사용</button>
 	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
+	const ctx = "${pageContext.request.contextPath}";
+
+	document.querySelector("#btn2").addEventListener("click", function() {
+		console.log("버튼2번 클릭됨");
+		// 첫번째 파라미터 : 요청 경로
+		fetch(ctx + "/ex39/sub02");
+	});
+
 	document.querySelector("#btn1").addEventListener("click", function() {
 		console.log("버튼1번 클릭됨");
 	});
+	
+	
 </script>
 </body>
 </html>

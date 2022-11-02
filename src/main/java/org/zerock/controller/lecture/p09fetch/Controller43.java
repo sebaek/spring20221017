@@ -63,6 +63,13 @@ public class Controller43 {
 		System.out.println(name);
 		System.out.println(email);
 	}
+	
+	@PostMapping("sub08")
+	public void method8(String address, Integer age) {
+		System.out.println("8번 메소드 일함");
+		System.out.println(address);
+		System.out.println(age);
+	}
 }
 
 

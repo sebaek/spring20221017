@@ -52,6 +52,15 @@
 <script>
 const ctx = "${pageContext.request.contextPath}";
 
+document.querySelector("#btn8").addEventListener("click", function() {
+	const data = new URLSearchParams(new FormData(document.forms.form2))
+	
+	fetch(ctx + "/ex43/sub08", {
+		method : "post",
+		body : data
+	});
+});
+
 document.querySelector("#btn7").addEventListener("click", function() {
 	const data = new URLSearchParams(new FormData(document.forms.form1));
 	

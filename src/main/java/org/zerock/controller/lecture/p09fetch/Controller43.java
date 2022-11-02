@@ -26,6 +26,13 @@ public class Controller43 {
 		System.out.println(email); // null이 아님
 		System.out.println(age); // null이 아님
 	}
+	
+	@GetMapping("sub03")
+	public void method3(String name, String email) {
+		System.out.println("세번째 메소드 일함");
+		System.out.println(name);
+		System.out.println(email);
+	}
 }
 
 

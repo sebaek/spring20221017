@@ -18,9 +18,31 @@
 	
 	<button id="btn2">/ex43/sub02 get 요청</button>
 	
+	<br>
+	
+	<button id="btn3">/ex43/sub03 get 요청</button>
+	<br>
+	<form action="" id="form1">
+		name <input type="text" name="name"> <br>
+		email <input type="text" name="email"> 
+	</form>
+	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";
+
+document.querySelector("#btn3").addEventListener("click", function() {
+	// const form1 = document.querySelector("#form1");
+	const form1 = document.forms.form1;
+	const formData = new FormData(form1);
+	const data = new URLSearchParams(formData);
+	
+	fetch(ctx + "/ex43/sub03?" + data);
+})
+
+document.querySelector("#btn2").addEventListener("click", function() {
+	fetch(ctx + "/ex43/sub02?email=ab+c@gmail.com&age=33");
+});
 
 document.querySelector("#btn1").addEventListener("click", function() {
 	fetch(ctx + "/ex43/sub01?name=son&address=seoul");

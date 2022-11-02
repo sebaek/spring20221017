@@ -13,6 +13,8 @@
 <body>
 	<h1>Accept 요청 헤더를 처리하는 콘트롤러 메소드</h1>
 	<button id="btn1">/ex42/sub01 요청</button>
+	<br>
+	<button id="btn2">/ex42/sub01 요청 (Accept : text/html)</button>
 	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>

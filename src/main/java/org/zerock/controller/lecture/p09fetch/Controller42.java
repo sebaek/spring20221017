@@ -13,9 +13,14 @@ public class Controller42 {
 		
 	}
 	
-	@GetMapping(path = "sub01", produces = "text/html")
+	@GetMapping(path = "sub01", produces = "text/plain")
 	public void method1() {
 		System.out.println("/ex42/sub01 메소드 일함");
+	}
+	
+	@GetMapping(path = "sub01", produces = "text/html")
+	public void method2() {
+		System.out.println("/ex42/sub02 메소드 일함");
 	}
 }
 

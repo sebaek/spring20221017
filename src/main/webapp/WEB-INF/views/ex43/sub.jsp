@@ -38,6 +38,11 @@
 <script>
 const ctx = "${pageContext.request.contextPath}";
 
+document.querySelector("#btn4").addEventListener("click", function() {
+	const data = new URLSearchParams(new FormData(document.forms.form2));
+	fetch(ctx + "/ex43/sub04?" + data);
+})
+
 document.querySelector("#btn3").addEventListener("click", function() {
 	// const form1 = document.querySelector("#form1");
 	const form1 = document.forms.form1;

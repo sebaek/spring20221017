@@ -20,14 +20,30 @@
 	
 	<br>
 	<button id="btn3">/ex41/sub03 헤더 추가 (Your-Header, My-Header)</button>
+	
+	<br>
+	<button id="btn4">/ex41/sub04 헤더 변경 (Accept)</button>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 	const ctx = "${pageContext.request.contextPath}";
+	
+	document.querySelector("#btn4").addEventListener("click", function() {
+		fetch(ctx + "/ex41/sub04", {
+			method : "get",
+			headers : {
+				"My-Header" : "My Values",
+				"Accept" : "text/plain"
+			}
+		});
+	});
+	
+	
 	document.querySelector("#btn3").addEventListener("click", function() {
 		fetch(ctx + "/ex41/sub03", {
 			method : "get",
 			headers : {
-				"Your-Header" : "Your Header Value"
+				"Your-Header" : "Your Header Value",
+				"My-Header" : "My Values"
 			}
 		});
 	});

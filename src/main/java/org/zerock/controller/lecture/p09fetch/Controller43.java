@@ -1,6 +1,7 @@
 package org.zerock.controller.lecture.p09fetch;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -11,4 +12,27 @@ public class Controller43 {
 	public void method() {
 		
 	}
+	
+	@GetMapping("sub01")
+	public void method1(String name, String address) {
+		System.out.println("첫번째 메소드 일함!!!");
+		System.out.println(name);
+		System.out.println(address);
+	}
+	
+	@GetMapping("sub02")
+	public void method2(String email, Integer age) {
+		System.out.println("두번째 메소드 일함");
+		System.out.println(email); // null이 아님
+		System.out.println(age); // null이 아님
+	}
 }
+
+
+
+
+
+
+
+
+

@@ -12,6 +12,30 @@
 </head>
 <body>
 	<h1>서버로 데이터 전송</h1>
+	<button id="btn1">/ex43/sub01 get 요청</button>
+	
+	<br>
+	
+	<button id="btn2">/ex43/sub02 get 요청</button>
+	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script>
+const ctx = "${pageContext.request.contextPath}";
+
+document.querySelector("#btn1").addEventListener("click", function() {
+	fetch(ctx + "/ex43/sub01?name=son&address=seoul");
+});
+</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

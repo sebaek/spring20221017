@@ -16,6 +16,8 @@ public class Controller39 {
 	public void method2() {
 		System.out.println("/ex39/sub02 요청 잘 받음");
 	}
+	
+	// /ex39/sub03 요청 받아서 처리하는 메소드 작성
 }
 
 

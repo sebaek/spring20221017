@@ -17,6 +17,8 @@
 	<br>
 	<button id="btn2">버튼2 fetch 사용</button>
 	
+	<%-- 세번째 버튼 만들고 클릭하면 fetch 요청이 /ex39/sub03으로 가도록 --%>
+	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 	const ctx = "${pageContext.request.contextPath}";

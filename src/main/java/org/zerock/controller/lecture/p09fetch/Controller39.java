@@ -18,6 +18,12 @@ public class Controller39 {
 	}
 	
 	// /ex39/sub03 요청 받아서 처리하는 메소드 작성
+	@RequestMapping("sub03")
+	public void method3() {
+		System.out.println("/ex39/sub03 요청 잘 받음!!!");
+	}
+	
+	
 }
 
 

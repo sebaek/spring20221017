@@ -11,40 +11,35 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-	<h1>ajax / fecth / xhr 요청</h1>
-	
-	<button id="btn1">버튼1</button> 
+	<h1>fetch 요청방식 변경</h1>
+	<button id="btn1">/ex40/sub01 get 방식 요청</button>
 	<br>
-	<button id="btn2">버튼2 fetch 사용</button>
+	<button id="btn2">/ex40/sub02 get 방식 요청 w/ option</button>
 	<br>
-	<%-- 세번째 버튼 만들고 클릭하면 fetch 요청이 /ex39/sub03으로 가도록 --%>
-	<button id="btn3">버튼3 fetch 사용</button>
+	<button id="btn3">/ex40/sub03 post 방식 요청</button>
 	
+	<%-- #btn4 /ex40/sub04 get 방식 fetch 요청 --%>
+	<%-- #btn5 /ex40/sub04 post 방식 fetch 요청 --%>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 	const ctx = "${pageContext.request.contextPath}";
-
+	
 	document.querySelector("#btn3").addEventListener("click", function() {
-		fetch(ctx + "/ex39/sub03");
+		fetch(ctx + "/ex40/sub03", {method : "post"});
 	});
 	
 	document.querySelector("#btn2").addEventListener("click", function() {
-		console.log("버튼2번 클릭됨");
-		// 첫번째 파라미터 : 요청 경로
-		fetch(ctx + "/ex39/sub02");
+		// fetch의 두번째 파라미터는 options (object)
+		fetch(ctx + "/ex40/sub02", {method : "get"})
 	});
-
+	
 	document.querySelector("#btn1").addEventListener("click", function() {
-		console.log("버튼1번 클릭됨");
+		// 아무 옵션도 주지 않으면 get 방식
+		fetch(ctx + "/ex40/sub01");
 	});
-	
-	
 </script>
 </body>
 </html>
-
-
-
 
 
 

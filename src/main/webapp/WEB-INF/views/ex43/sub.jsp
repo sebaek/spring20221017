@@ -27,6 +27,13 @@
 		email <input type="text" name="email"> 
 	</form>
 	
+	<br>
+	<button id="btn4">/ex43/sub04 get 요청</button>
+	<form action="" id="form2">
+		<input type="text" name="address" placeholder="address"> <br>
+		<input type="number" name="age" placeholder="age">
+	</form>
+	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";

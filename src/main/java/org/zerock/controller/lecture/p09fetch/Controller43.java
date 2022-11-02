@@ -33,6 +33,13 @@ public class Controller43 {
 		System.out.println(name);
 		System.out.println(email);
 	}
+	
+	@GetMapping("sub04")
+	public void method4(String address, Integer age) {
+		System.out.println("네번째 메소드 일함");
+		System.out.println(address); // null 아니게
+		System.out.println(age); // null 아니게 
+	}
 }
 
 

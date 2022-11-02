@@ -34,9 +34,23 @@
 		<input type="number" name="age" placeholder="age">
 	</form>
 	
+	<br>
+	<button id="btn5">/ex43/sub05 post 요청</button>
+	
+	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";
+
+document.querySelector("#btn5").addEventListener("click", function() {
+	fetch(ctx + "/ex43/sub05", {
+		method : "post",
+		headers : {
+			"Content-Type" : "application/x-www-form-urlencoded"
+		},
+		body : "address=seoul&age=33"
+	});
+});
 
 document.querySelector("#btn4").addEventListener("click", function() {
 	const data = new URLSearchParams(new FormData(document.forms.form2));

@@ -2,6 +2,7 @@ package org.zerock.controller.lecture.p09fetch;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -39,6 +40,14 @@ public class Controller43 {
 		System.out.println("네번째 메소드 일함");
 		System.out.println(address); // null 아니게
 		System.out.println(age); // null 아니게 
+	}
+	
+	@PostMapping("sub05")
+	public void method5(String address, Integer age) {
+		System.out.println("5번 메소드 일함");
+		System.out.println(address);
+		System.out.println(age);
+		
 	}
 }
 

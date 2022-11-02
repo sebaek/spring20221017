@@ -49,6 +49,13 @@ public class Controller43 {
 		System.out.println(age);
 		
 	}
+	
+	@PostMapping("sub06")
+	public void method6(String name, String email) {
+		System.out.println("6번 메소드 일함");
+		System.out.println(name); // null 아니게
+		System.out.println(email); // null아니게
+	}
 }
 
 

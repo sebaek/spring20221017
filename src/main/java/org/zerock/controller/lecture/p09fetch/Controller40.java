@@ -52,6 +52,26 @@ public class Controller40 {
 	public void method7() {
 		System.out.println("/ex40/sub04 delete 방식 요청 잘 받음#!%!%!!@#%");
 	}
+	
+	@GetMapping("sub05")
+	public void method8() {
+		System.out.println("/ex40/sub05 get 방식 요청 처리");
+	}
+	
+	@PostMapping("sub05")
+	public void method9() {
+		System.out.println("/ex40/sub05 post 방식 요청 처리");
+	}
+	
+	@PutMapping("sub05")
+	public void method10() {
+		System.out.println("/ex40/sub05 put 방식 요청 처리");
+	}
+	
+	@DeleteMapping("sub05")
+	public void method11() {
+		System.out.println("/ex40/sub05 delete 방식 요청 처리");
+	}
 }
 
 

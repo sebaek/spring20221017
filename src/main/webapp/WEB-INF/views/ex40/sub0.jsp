@@ -32,17 +32,33 @@
 	
 	<!-- (br+button#btn$@8)*4 -->
 	<br>
-	<button id="btn8">/ex40/sub05 get 방식 요청</button>
+	<button id="btn8">/ex40/sub05 get 방식(R) 요청</button>
 	<br>
-	<button id="btn9">/ex40/sub05 post 방식 요청</button>
+	<button id="btn9">/ex40/sub05 post 방식(C) 요청</button>
 	<br>
-	<button id="btn10">/ex40/sub05 put 방식 요청</button>
+	<button id="btn10">/ex40/sub05 put 방식(U) 요청</button>
 	<br>
-	<button id="btn11">/ex40/sub05 delete 방식 요청</button>
+	<button id="btn11">/ex40/sub05 delete 방식(D) 요청</button>
 	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 	const ctx = "${pageContext.request.contextPath}";
+	
+	document.querySelector("#btn11").addEventListener("click", function() {
+		fetch(ctx + "/ex40/sub05", {method : "delete"});
+	})
+	
+	document.querySelector("#btn10").addEventListener("click", function() {
+		fetch(ctx + "/ex40/sub05", {method : "put"});
+	})
+	
+	document.querySelector("#btn9").addEventListener("click", function() {
+		fetch(ctx + "/ex40/sub05", {method : "post"});
+	})
+	
+	document.querySelector("#btn8").addEventListener("click", function() {
+		fetch(ctx + "/ex40/sub05");
+	})
 	
 	document.querySelector("#btn7").addEventListener("click", function() {
 		fetch(ctx + "/ex40/sub04", {method : "delete"})

@@ -21,6 +21,19 @@ public class Controller45 {
 //		return ResponseEntity.notFound().build();
 		return ResponseEntity.status(500).build();
 	}
+	
+	@GetMapping("sub02")
+	public ResponseEntity method02() {
+//		return ResponseEntity.status(202).build();
+		return ResponseEntity.accepted().build();
+	}
+	
+	@GetMapping("sub03")
+	public ResponseEntity method03() {
+		return ResponseEntity.ok()
+				.header("My-Header", "My-Value")
+				.build();
+	}
 }
 
 

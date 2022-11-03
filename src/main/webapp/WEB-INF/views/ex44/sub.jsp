@@ -21,9 +21,34 @@
 	<br>
 	<button id="btn4">/ex44/sub04 post 요청 json</button>
 	
+	<br>
+	<button id="btn5">/ex44/sub05 post 요청 json</button>
+	<br>
+	<button id="btn6">/ex44/sub06 post 요청 json</button>
+	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";
+document.querySelector("#btn6").addEventListener("click", function() {
+	fetch(ctx + "/ex44/sub06", {
+		method : "post",
+		headers : {
+			"Content-Type" : "application/json"
+		},
+		body : `{"name" : "손", "job" : {"location" : "london", "since" : "2000년"}}`
+	})
+});
+
+
+document.querySelector("#btn5").addEventListener("click", function() {
+	fetch(ctx + "/ex44/sub05", {
+		method : "post",
+		headers : {
+			"Content-Type" : "application/json"
+		},
+		body : `{"address":"서울", "phone":["010", "020"], "married":"true", "score":"99.9"}`
+	})
+});
 
 document.querySelector("#btn4").addEventListener("click", function() {
 	fetch(ctx + "/ex44/sub04", {

@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.zerock.domain.lecture.JavaBean20;
 import org.zerock.domain.lecture.JavaBean21;
+import org.zerock.domain.lecture.JavaBean22;
 
 @Controller
 @RequestMapping("ex44")
@@ -37,6 +38,11 @@ public class Controller44 {
 	
 	@PostMapping("sub04")
 	public void method04(@RequestBody JavaBean21 data) {
+		System.out.println(data);
+	}
+	
+	@PostMapping("sub05")
+	public void method05(@RequestBody JavaBean22 data) {
 		System.out.println(data);
 	}
 }

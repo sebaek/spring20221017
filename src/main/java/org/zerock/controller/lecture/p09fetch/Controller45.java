@@ -51,6 +51,7 @@ public class Controller45 {
 	@GetMapping("sub05")
 	public ResponseEntity<String> method05() {
 		return ResponseEntity.ok()
+				.header("Content-Type", "text/plain;charset=UTF-8")
 				.body("헬로 월드");
 	}
 	

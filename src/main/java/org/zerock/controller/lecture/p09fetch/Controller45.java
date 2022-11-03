@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.zerock.domain.lecture.JavaBean20;
 import org.zerock.domain.lecture.JavaBean24;
 import org.zerock.domain.lecture.JavaBean25;
@@ -101,6 +102,24 @@ public class Controller45 {
 		return ResponseEntity.ok(data);
 	}
 	
+	@GetMapping("sub10")
+	@ResponseBody
+	public JavaBean25 method10() {
+		JavaBean25 data = new JavaBean25();
+		JavaBean26 sub = new JavaBean26();
+		
+		sub.setAddress(List.of("서울", "부산", "제주"));
+		sub.setMarried(true);
+		
+		data.setInfo(sub);
+		data.setAge(99);
+		
+		return data;
+	}
+	
+	// sub11 요청경로 
+	// JavaBean27 을 json 으로 변경한 응답하는 메소드 작성
+	// @ResponseBody 사용
 }
 
 

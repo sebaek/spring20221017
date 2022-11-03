@@ -34,12 +34,52 @@
 	<br>
 	<button id="btn9">/ex44/sub05 post 요청 obj -> json</button>
 	<br>
-	<button id="btn10">/ex44/sub4 post 요청 obj -> json</button>
+	<button id="btn10">/ex44/sub04 post 요청 obj -> json</button>
+	
+	<br>
+	<button id="btn11">/ex44/sub03 post 요청 form -> obj -> json</button>
+	<form action="" id="form1">
+		<input type="text" name="name" id="nameInput1" value="차범근">
+		<input type="text" name="address" id="addressInput1" value="독일">
+	</form>
 	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";
 
+document.querySelector("#btn11").addEventListener("click", function() {
+	const name = document.querySelector("#nameInput1").value;
+	const address = document.querySelector("#addressInput1").value;
+	const obj = {
+		name : name,
+		address : address,
+	};
+	const data = JSON.stringify(obj);
+	fetch(ctx + "/ex44/sub03", {
+		method : "post",
+		headers : {
+			"Content-Type" : "application/json"
+		},
+		body : data
+	});
+});
+
+document.querySelector("#btn10").addEventListener("click", function() {
+	const obj = {
+			age:55, 
+			name:"차범근", 
+			hasCar:true, 
+			food:["햄버거", "국수"]
+	};
+	
+	fetch(ctx + "/ex44/sub04", {
+		method : "post",
+		headers : {
+			"Content-Type" : "application/json"
+		},
+		body : JSON.stringify(obj)
+	});
+})
 
 document.querySelector("#btn9").addEventListener("click", function() {
 	const o = {

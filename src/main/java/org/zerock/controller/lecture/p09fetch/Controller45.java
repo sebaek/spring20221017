@@ -2,6 +2,7 @@ package org.zerock.controller.lecture.p09fetch;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -9,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.zerock.domain.lecture.JavaBean20;
 import org.zerock.domain.lecture.JavaBean24;
+import org.zerock.domain.lecture.JavaBean25;
+import org.zerock.domain.lecture.JavaBean26;
 import org.zerock.domain.lecture.JavaBean27;
 
 @Controller
@@ -80,6 +83,20 @@ public class Controller45 {
 		data.setName("박지성");
 		data.setDate(LocalDate.now());
 		data.setDateTime(LocalDateTime.now());
+		
+		return ResponseEntity.ok(data);
+	}
+	
+	@GetMapping("sub09")
+	public ResponseEntity<JavaBean25> method09() {
+		JavaBean25 data = new JavaBean25();
+		JavaBean26 sub = new JavaBean26();
+		
+		sub.setAddress(List.of("서울", "부산", "제주"));
+		sub.setMarried(true);
+		
+		data.setInfo(sub);
+		data.setAge(99);
 		
 		return ResponseEntity.ok(data);
 	}

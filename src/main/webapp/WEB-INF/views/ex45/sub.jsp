@@ -12,6 +12,27 @@
 </head>
 <body>
 	<h1>응답!!</h1>
+	<button id="btn1">/ex45/sub01</button>
+	<br>
+	<button id="btn2">/ex45/sub02 202 accepted 응답</button>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script>
+const ctx = "${pageContext.request.contextPath}";
+
+document.querySelector("#btn1").addEventListener("click", function() {
+	fetch(ctx + "/ex45/sub01");
+});
+</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

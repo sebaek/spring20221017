@@ -71,8 +71,10 @@ public class Controller44 {
 		System.out.println(id);
 	}
 	
+	// path variable 자동 형변환
+	// 파라미터명과 path variable 이름 같으면 value 속성 생략 가능
 	@GetMapping("sub16/{d}")
-	public void method16(@PathVariable("d") String d) {
+	public void method16(@PathVariable int d) {
 		System.out.println(d); // 99
 	}
 }

@@ -39,7 +39,7 @@
 	<br>
 	<button id="btn11">/ex44/sub03 post 요청 form -> obj -> json</button>
 	<form action="" id="form1">
-		<input type="text" name="name" id="nameInput1" value="차범근">
+		<input type="text" name="name" id="nameInput1" value="차범근"> <br>
 		<input type="text" name="address" id="addressInput1" value="독일">
 	</form>
 	

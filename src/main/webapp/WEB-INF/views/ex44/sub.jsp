@@ -67,6 +67,45 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";
+
+document.querySelector("#btn13").addEventListener("click", function() {
+	const age = document.querySelector("#ageInput3").value;
+	const name = document.querySelector("#nameInput3").value;
+	const hasCarCheckbox = document.querySelector("#hasCarCheckBox3:checked");
+	const hasCar = hasCarCheckbox != null;
+	const foodCheckBoxs = document.querySelectorAll(".foodCheckbox3:checked");
+	const food = [];
+	
+	/*
+	for (let i = 0; i < foodCheckBoxs.length; i++) {
+		food.push(foodCheckBoxs[i].value);	
+	}
+	*/
+	// for of
+	for (const foodCheckBox of foodCheckBoxs) {
+		food.push(foodCheckBox.value);
+	}
+	
+	/*
+	const obj = {
+			age : age,
+			name : name,
+			hasCar : hasCar,
+			food : food
+	};
+	*/
+	const obj = {age, name, hasCar, food};
+	const data = JSON.stringify(obj);
+	
+	fetch(ctx + "/ex44/sub04", {
+		method : "post",
+		headers : {
+			"Content-Type" : "application/json"
+		},
+		body : data
+	});
+});
+
 document.querySelector("#btn12").addEventListener("click", function() {
 	const name = document.querySelector("#nameInput2").value;
 	const location = document.querySelector("#locationInput2").value;

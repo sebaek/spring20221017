@@ -70,6 +70,11 @@ public class Controller44 {
 	public void method15(@PathVariable("id") String id) {
 		System.out.println(id);
 	}
+	
+	@GetMapping("sub16/{d}")
+	public void method16(@PathVariable("d") String d) {
+		System.out.println(d); // 99
+	}
 }
 
 

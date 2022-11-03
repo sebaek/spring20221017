@@ -48,6 +48,22 @@
 	<input type="text" id="locationInput2" value="런던"> <br>
 	<input type="text" id="sinceInput2" value="2000년"> <br>
 	
+	<br>
+	
+	<button id="btn13">/ex44/sub04 post form->obj->json</button> <br>
+	age<input type="number" id="ageInput3" value="55">
+	<br>
+	name<input type="text" id="nameInput3" value="손흥민">
+	<br>
+	hasCar<input type="checkbox" id="hasCarCheckBox3" value="true">
+	<br>
+	food:피자<input type="checkbox" class="foodCheckbox3" value="피자">
+	<br>
+	food:햄버거<input type="checkbox" class="foodCheckbox3" value="햄버거">
+	<br>
+	food:커피<input type="checkbox" class="foodCheckbox3" value="커피">
+	<br>
+	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";

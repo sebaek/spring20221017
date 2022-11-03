@@ -120,6 +120,22 @@ public class Controller45 {
 	// sub11 요청경로 
 	// JavaBean27 을 json 으로 변경한 응답하는 메소드 작성
 	// @ResponseBody 사용
+	@GetMapping("sub11")
+	@ResponseBody
+	public JavaBean27 method11() {
+		JavaBean27 data = new JavaBean27();
+		data.setName("박지성");
+		data.setDate(LocalDate.now());
+		data.setDateTime(LocalDateTime.now());
+		
+		return data;
+	}
+	
+	@GetMapping("sub12")
+	@ResponseBody
+	public String method12() {
+		return "헬로 월드";
+	}
 }
 
 

@@ -63,10 +63,30 @@
 	<br>
 	food:커피<input type="checkbox" class="foodCheckbox3" value="커피">
 	<br>
+	<button id="btn14">/ex44/sub14 post json + 날짜(date)</button>
+	<br>
+	<input type="text" id="nameInput14"> <br>
+	<input type="date" id="dateInput14"> <br>
 	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";
+
+document.querySelector("#btn14").addEventListener("click", function() {
+	const name = document.querySelector("#nameInput14").value;
+	const date = document.querySelector("#dateInput14").value;
+	
+	const obj = {name, date}
+	
+	fetch(ctx + "/ex44/sub14", {
+		method : "post",
+		headers : {
+			"Content-Type" : "application/json"
+		},
+		body : JSON.stringify(obj)
+	})
+	
+})
 
 document.querySelector("#btn13").addEventListener("click", function() {
 	const age = document.querySelector("#ageInput3").value;

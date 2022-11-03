@@ -29,9 +29,48 @@
 	<br>
 	<button id="btn7">/ex44/sub07 post 요청 json</button>
 	
+	<br>
+	<button id="btn8">/ex44/sub03 post 요청 obj -> json</button>
+	<br>
+	<button id="btn9">/ex44/sub05 post 요청 obj -> json</button>
+	<br>
+	<button id="btn10">/ex44/sub4 post 요청 obj -> json</button>
+	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";
+
+
+document.querySelector("#btn9").addEventListener("click", function() {
+	const o = {
+			address:"서울", 
+			score: 88.8, 
+			phone:["1111", "2222"], 
+			married:true
+	};
+	const data = JSON.stringify(o);
+	fetch(ctx + "/ex44/sub05", {
+		method : "post",
+		headers : {
+			"Content-Type" : "application/json"
+		}, 
+		body : data
+	});
+})
+
+document.querySelector("#btn8").addEventListener("click", function() {
+	const o = {name : "박", address : "부산"};
+	const data = JSON.stringify(o);
+	
+	fetch(ctx + "/ex44/sub03", {
+		method : "post",
+		headers : {
+			"Content-Type" : "application/json"
+		},
+		body : data
+	})
+})
+
 document.querySelector("#btn7").addEventListener("click", function() {
 	fetch(ctx + "/ex44/sub07", {
 		method : "post",

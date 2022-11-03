@@ -23,6 +23,8 @@
 	<button id="btn5">/ex45/sub05 응답 본문 String</button>
 	<br>
 	<button id="btn6">/ex45/sub06 응답 본문 json</button>
+	<br>
+	<button id="btn7">/ex45/sub07 응답 본문 json {"name": "손흥민", "address":"서울"}</button>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";

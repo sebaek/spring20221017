@@ -51,6 +51,27 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";
+document.querySelector("#btn12").addEventListener("click", function() {
+	const name = document.querySelector("#nameInput2").value;
+	const location = document.querySelector("#locationInput2").value;
+	const since = document.querySelector("#sinceInput2").value;
+	
+	const obj = {
+			name : name,
+			job : {
+				location : location,
+				since : since
+			}
+	};
+	
+	fetch(ctx + "/ex44/sub06", {
+		method : "post",
+		headers : {
+			"Content-Type" : "application/json"
+		},
+		body : JSON.stringify(obj)
+	});
+})
 
 document.querySelector("#btn11").addEventListener("click", function() {
 	const name = document.querySelector("#nameInput1").value;

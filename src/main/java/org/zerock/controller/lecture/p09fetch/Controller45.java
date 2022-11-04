@@ -2,7 +2,9 @@ package org.zerock.controller.lecture.p09fetch;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -136,7 +138,30 @@ public class Controller45 {
 	public String method12() {
 		return "헬로 월드";
 	}
+	
+	@GetMapping("sub13")
+	@ResponseBody
+	public Map<String, String> method13() {
+		Map<String, String> map = new HashMap<>();
+		map.put("address", "서울");
+		map.put("email", "abc@gmail.com");
+		map.put("age", "33");
+		
+		return map;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

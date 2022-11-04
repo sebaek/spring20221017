@@ -84,9 +84,23 @@
 	<br>
 	<button id="btn14">/ex47/sub14 delete 요청 : 고객정보 delete</button>
 	
+	<br>
+	<button id="btn15">/ex47/sub15 delete 요청 : 공급자정보 delete</button>
+	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";
+
+document.querySelector("#btn15").addEventListener("click", function() {
+	const id = document.querySelector("#supplierIdInput11").value;
+	fetch(ctx + "/ex47/sub15/" + id, {
+		method : "delete"
+	})
+	.then(res => res.json())
+	.then(data => {
+		document.querySelector("#messageDiv").innerText = data.message;
+	});
+});
 
 document.querySelector("#btn14").addEventListener("click", function() {
 	fetch(ctx + "/ex47/sub14/96", {

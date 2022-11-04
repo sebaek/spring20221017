@@ -4,6 +4,9 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="org.zerock.mapper.lecture.Mapper11">
+	<delete id="deleteSupplier">
+	DELETE FROM Suppliers WHERE SupplierId = #{id}
+	</delete>
 	<delete id="deleteCustomer">
 	DELETE FROM Customers WHERE CustomerId = #{id}
 	</delete>

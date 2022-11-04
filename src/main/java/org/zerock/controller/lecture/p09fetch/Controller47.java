@@ -171,6 +171,22 @@ public class Controller47 {
 		
 		return map;
 	}
+	
+	@DeleteMapping("sub15/{id}")
+	@ResponseBody
+	public Map<String, Object> method15(@PathVariable int id) {
+		Map<String, Object> map = new HashMap<>();
+		
+		int cnt = mapper.deleteSupplier(id);
+		
+		if (cnt == 1) {
+			map.put("message", id + "번 공급자정보가 삭제되었습니다.");
+		} else {
+			map.put("message", id + "번 공급자정보가 삭제되지 않았습니다.");
+		}
+		
+		return map;
+	}
 }
 
 

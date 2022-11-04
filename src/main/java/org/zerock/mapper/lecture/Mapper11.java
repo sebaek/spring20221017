@@ -20,6 +20,8 @@ public interface Mapper11 {
 
 
 	int deleteCustomer(int id);
+
+	int deleteSupplier(int id);
 }
 
 

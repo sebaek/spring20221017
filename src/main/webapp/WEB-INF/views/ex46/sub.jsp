@@ -17,9 +17,26 @@
 	<button id="btn2">/ex46/sub01</button>
 	<br>
 	<button id="btn3">/ex46/sub01</button>
+	<br>
+	<button id="btn4">/ex46/sub01</button>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";
+document.querySelector("#btn4").addEventListener("click", function() {
+	fetch(ctx + "/ex46/sub01")
+	.then(function() {
+		
+		return "a";
+	})
+	.then(function(v) {
+		// 코드 작성
+	})
+	.then(function(v) {
+		
+		console.log(v); // "ab"
+	});
+});
+
 
 document.querySelector("#btn3").addEventListener("click", function() {
 	fetch(ctx + "/ex46/sub01")

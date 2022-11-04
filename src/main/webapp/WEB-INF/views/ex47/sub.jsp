@@ -74,9 +74,37 @@
 	<input type="text" id="supplierCountryInput11" placeholder="국가"> <br>
 	<input type="text" id="supplierPhoneInput11" placeholder="전화번호"> <br>
 	<button id="btn11">/ex47/sub11 put 요청 : 공급자정보 update</button>
+	
+	<br>
+	<button id="btn12">/ex47/sub12 post 요청 : 고객정보 insert</button>
+	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";
+
+document.querySelector("#btn12").addEventListener("click", function() {
+	
+	const data = {
+		name : "차범근",
+		contanctName : "cha bum",
+		address : "berlin",
+		city : "jeju",
+		postalCode : "222",
+		country : "korea"
+	};
+	
+	fetch(ctx + "/ex47/sub12", {
+		method : "post",
+		headers : {
+			"Content-Type" : "application/json"
+		}, 
+		body : JSON.stringify(data)
+	})
+	.then(res => res.json())
+	.then(data => {
+		document.querySelector("#messageDiv").innerText = data.message;
+	});
+});
 
 document.querySelector("#btn11").addEventListener("click", function() {
 	const id = document.querySelector("#supplierIdInput11").value;

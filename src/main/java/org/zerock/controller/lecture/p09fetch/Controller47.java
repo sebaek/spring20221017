@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -121,6 +122,20 @@ public class Controller47 {
 			map.put("message", supplier.getId() + "번 공급자정보가 변경되었습니다.");
 		} else {
 			map.put("message", supplier.getId() + "번 공급자정보가 변경되지 않았습니다.");
+		}
+		
+		return map;
+	}
+	
+	@PostMapping("sub12")
+	@ResponseBody
+	public Map<String, String> method12(@RequestBody JavaBean18 customer) {
+		Map<String, String> map = new HashMap<>();
+		int cnt = mapper.insertCustomer(customer);
+		if (cnt == 1) {
+			map.put("message", customer.getId() + "번 고객정보가 입력되었습니다.");
+		} else {
+			map.put("message", "고객정보가 입력되지 않았습니다.");
 		}
 		
 		return map;

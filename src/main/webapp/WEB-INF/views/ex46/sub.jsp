@@ -30,6 +30,8 @@ document.querySelector("#btn4").addEventListener("click", function() {
 	})
 	.then(function(v) {
 		// 코드 작성
+		
+		return v + "b";
 	})
 	.then(function(v) {
 		

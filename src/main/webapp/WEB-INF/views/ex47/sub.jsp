@@ -65,10 +65,42 @@
 	
 	<br>
 	<!--  input 요소들 작성  -->
+	<input type="text" id="supplierIdInput11" placeholder="아이디"> <br>
+	<input type="text" id="supplierNameInput11" placeholder="이름"> <br>
+	<input type="text" id="supplierContactNameInput11" placeholder="계약명"> <br>
+	<input type="text" id="supplierAddressInput11" placeholder="주소"> <br>
+	<input type="text" id="supplierCityInput11" placeholder="도시"> <br>
+	<input type="text" id="supplierPostalCodeInput11" placeholder="우편번호"> <br>
+	<input type="text" id="supplierCountryInput11" placeholder="국가"> <br>
+	<input type="text" id="supplierPhoneInput11" placeholder="전화번호"> <br>
 	<button id="btn11">/ex47/sub11 put 요청 : 공급자정보 update</button>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";
+
+document.querySelector("#btn11").addEventListener("click", function() {
+	const id = document.querySelector("#supplierIdInput11").value;
+	const name = document.querySelector("#supplierNameInput11").value;
+	const contactName = document.querySelector("#supplierContactNameInput11").value;
+	const address = document.querySelector("#supplierAddressInput11").value;
+	const postalCode = document.querySelector("#supplierPostalCodeInput11").value;
+	const country = document.querySelector("#supplierCountryInput11").value;
+	const phone = document.querySelector("#supplierPhoneInput11").value;
+	const city = document.querySelector("#supplierCityInput11").value;
+	
+	const data = {id, name, contactName, address, postalCode, country, phone, city};
+	fetch(ctx + "/ex47/sub11", {
+		method : "put",
+		headers : {
+			"Content-Type" : "application/json"
+		},
+		body : JSON.stringify(data)
+	})
+	.then(res => res.json())
+	.then(data => {
+		document.querySelector("#messageDiv").innerText = data.message;
+	});
+});
 
 document.querySelector("#btn10").addEventListener("click", function() {
 	const data = {

@@ -15,15 +15,32 @@
 	<button id="btn1">/ex46/sub01</button>
 	<br>
 	<button id="btn2">/ex46/sub01</button>
+	<br>
+	<button id="btn3">/ex46/sub01</button>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";
 
+document.querySelector("#btn3").addEventListener("click", function() {
+	fetch(ctx + "/ex46/sub01")
+	.then(function() {
+		console.log("첫번째 then 함수");
+		
+		return "abc";
+	})
+	.then(function(data) {
+		console.log("두번째 then 함수");
+		console.log("첫번째 then 함수가 리턴한 값: ", data);
+	});
+});
+
 document.querySelector("#btn2").addEventListener("click", function() {
-	fetch(ctx + "/ex46/sub01").then(function() {
+	fetch(ctx + "/ex46/sub01")
+	.then(function() {
 		console.log("응답후 실행해야 하는 코드1");
 		console.log("응답후 실행해야 하는 코드2");
-	}).then(function() {
+	})
+	.then(function() {
 		console.log("응답후 실행3");
 		console.log("응답후 실행4")
 	});

@@ -13,18 +13,33 @@
 <body>
 	<h1>json 응답 처리</h1>
 	<button id="btn1">/ex47/sub01 json 응답</button>
-	
 	<br>
-	
 	<button id="btn2">/ex47/sub01 json 응답</button>
+	<br>
+	<button id="btn3">/ex47/sub03 json 응답</button>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";
 
+document.querySelector("#btn3").addEventListener("click", function() {
+	fetch(ctx + "/ex47/sub03")
+	// 코드 작성
+	
+	// blue
+	// red
+	// 5
+	// usa
+
+});
+
 document.querySelector("#btn2").addEventListener("click", function() {
 	fetch(ctx + "/ex47/sub01")
 	.then((res) => res.json())
-	.then((data) => console.log(data.name));
+	.then((data) => {
+		console.log(data.name);
+		console.log(data.job);
+		console.log(data.address);
+	});
 });
 
 document.querySelector("#btn1").addEventListener("click", function() {

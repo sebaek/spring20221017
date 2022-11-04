@@ -149,6 +149,27 @@ public class Controller45 {
 		
 		return map;
 	}
+	
+	@GetMapping("sub14")
+	@ResponseBody
+	public Map<String, Object> method14() {
+		Map<String, Object> map = new HashMap<>();
+		JavaBean25 data = new JavaBean25();
+		JavaBean26 sub = new JavaBean26();
+		
+		sub.setAddress(List.of("제주", "울릉도"));
+		sub.setMarried(false);
+		
+		data.setAge(99);
+		data.setInfo(sub);
+		
+		map.put("address", "부산");
+		map.put("age", 33);
+		map.put("married", true);
+		map.put("data", data);
+		
+		return map;
+	}
 }
 
 

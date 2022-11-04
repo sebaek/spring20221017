@@ -23,13 +23,23 @@
 	<button id="btn5">"5" /ex46/sub01</button>
 	<br>
 	<button id="btn6">"6" /ex46/sub01</button>
+	<br>
+	<button id="btn7">"7" /ex46/sub01</button>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";
 
+document.querySelector("#btn7").addEventListener("click", function() {
+	fetch(ctx + "/ex46/sub01")
+	.then(() => 3)
+	.then(a => a * 2)
+	.then(b => b * 2)
+	.then(c => console.log(c)); // ?
+});
+
 document.querySelector("#btn6").addEventListener("click", function() {
 	fetch(ctx + "/ex46/sub01")
-	.then(() =>  "a")
+	.then(() => "a")
 	.then(v => v + "b")
 	.then(v => console.log(v));
 });

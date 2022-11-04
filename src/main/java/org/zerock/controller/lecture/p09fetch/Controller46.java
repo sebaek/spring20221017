@@ -16,7 +16,12 @@ public class Controller46 {
 	
 	@GetMapping("sub01")
 	@ResponseBody
-	public String method1() {
+	public String method1() throws Exception {
+		
+		System.out.println("db작업중... 좀 오래 걸림");
+		Thread.sleep(5000);
+		
+		System.out.println("db작업 끝, 응답!");
 		
 		return "hello world!!";
 	}

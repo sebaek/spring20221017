@@ -17,7 +17,16 @@
 <script>
 const ctx = "${pageContext.request.contextPath}";
 document.querySelector("#btn1").addEventListener("click", function() {
-	fetch(ctx + "/ex46/sub01");
+	
+	console.log("1 statement");
+	
+	fetch(ctx + "/ex46/sub01").then(function() {
+		console.log("응답후 실행해야 하는 코드");
+	});
+	
+	console.log("응답과 상관없이 계속 실행하는 코드");
+	
+	
 });
 </script>
 </body>

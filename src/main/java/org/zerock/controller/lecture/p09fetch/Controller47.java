@@ -54,6 +54,12 @@ public class Controller47 {
 	public JavaBean18 method6(@PathVariable int id) {
 		return mapper.getCustomerById(id);
 	}
+	
+	@GetMapping("sub07/{id}")
+	@ResponseBody
+	public JavaBean19 method7(@PathVariable int id) {
+		return mapper.getSupplierById(id);
+	}
 }
 
 

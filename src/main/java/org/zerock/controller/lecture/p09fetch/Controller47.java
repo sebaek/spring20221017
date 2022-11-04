@@ -140,6 +140,20 @@ public class Controller47 {
 		
 		return map;
 	}
+	
+	@PostMapping("sub13")
+	@ResponseBody
+	public Map<String, String> method13(@RequestBody JavaBean19 supplier) {
+		Map<String, String> map = new HashMap<>();
+		int cnt = mapper.insertSupplier(supplier);
+		if (cnt == 1) {
+			map.put("message", supplier.getId() + "번 공급자정보가 입력되었습니다.");
+		} else {
+			map.put("message", "공급자정보가 입력되지 않았습니다.");
+		}
+		
+		return map;
+	}
 }
 
 

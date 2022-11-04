@@ -19,9 +19,26 @@
 	<button id="btn3">/ex47/sub03 json 응답</button>
 	<br>
 	<button id="btn4">/ex47/sub04 30번 customer json 응답</button>
+	<br>
+	<button id="btn5">/ex47/sub05 2번 supplier json 응답</button>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";
+
+document.querySelector("#btn5").addEventListener("click", function() {
+	fetch(ctx + "/ex47/sub05")
+	.then(res => res.json())
+	.then(s => {
+		console.log(s.id);
+		console.log(s.name);
+		console.log(s.contactName);
+		console.log(s.address);
+		console.log(s.city);
+		console.log(s.postalCode);
+		console.log(s.country);
+		console.log(s.phone);
+	});
+});
 
 document.querySelector("#btn4").addEventListener("click", function() {
 	fetch(ctx + "/ex47/sub04")

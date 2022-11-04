@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.zerock.domain.lecture.JavaBean18;
+import org.zerock.domain.lecture.JavaBean19;
 import org.zerock.mapper.lecture.Mapper11;
 
 @Controller
@@ -39,6 +40,12 @@ public class Controller47 {
 	@ResponseBody
 	public JavaBean18 method4() {
 		return mapper.getCustomerById(30);
+	}
+	
+	@GetMapping("sub05")
+	@ResponseBody
+	public JavaBean19 method5() {
+		return mapper.getSupplierById(2);
 	}
 }
 

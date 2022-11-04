@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -150,6 +151,22 @@ public class Controller47 {
 			map.put("message", supplier.getId() + "번 공급자정보가 입력되었습니다.");
 		} else {
 			map.put("message", "공급자정보가 입력되지 않았습니다.");
+		}
+		
+		return map;
+	}
+	
+	@DeleteMapping("sub14/{id}")
+	@ResponseBody
+	public Map<String, Object> method14(@PathVariable int id) {
+		Map<String, Object> map = new HashMap<>();
+		
+		int cnt = mapper.deleteCustomer(id);
+		
+		if (cnt == 1) {
+			map.put("message", id + "번 고객이 삭제되었습니다.");
+		} else {
+			map.put("message", id + "번 고객이 삭제되지 않았습니다.");
 		}
 		
 		return map;

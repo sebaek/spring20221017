@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.zerock.domain.lecture.JavaBean18;
@@ -46,6 +47,12 @@ public class Controller47 {
 	@ResponseBody
 	public JavaBean19 method5() {
 		return mapper.getSupplierById(2);
+	}
+	
+	@GetMapping("sub06/{id}")
+	@ResponseBody
+	public JavaBean18 method6(@PathVariable int id) {
+		return mapper.getCustomerById(id);
 	}
 }
 

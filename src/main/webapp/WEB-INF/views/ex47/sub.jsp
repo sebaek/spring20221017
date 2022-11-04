@@ -24,11 +24,13 @@ const ctx = "${pageContext.request.contextPath}";
 document.querySelector("#btn3").addEventListener("click", function() {
 	fetch(ctx + "/ex47/sub03")
 	// 코드 작성
-	
-	// blue
-	// red
-	// 5
-	// usa
+	.then(res => res.json())
+	.then(data => {
+		console.log(data.color[0]); // blue
+		console.log(data.color[1]); // red
+		console.log(data.model); // 5
+		console.log(data.location); // usa
+	})
 
 });
 

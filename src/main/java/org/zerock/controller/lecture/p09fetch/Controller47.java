@@ -1,5 +1,6 @@
 package org.zerock.controller.lecture.p09fetch;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -59,6 +60,23 @@ public class Controller47 {
 	@ResponseBody
 	public JavaBean19 method7(@PathVariable int id) {
 		return mapper.getSupplierById(id);
+	}
+	
+	@GetMapping("sub08/{id}")
+	@ResponseBody
+	public Map<String, Object> method8(@PathVariable int id) {
+		Map<String, Object> map = new HashMap<>();
+		
+		JavaBean18 customer = mapper.getCustomerById(id);
+		
+		if (customer != null) {
+			map.put("customer", customer);
+			map.put("message", "조회 완료되었습니다.");
+		} else {
+			map.put("message", "조회되지 않았습니다.");
+		}
+		
+		return map;
 	}
 }
 

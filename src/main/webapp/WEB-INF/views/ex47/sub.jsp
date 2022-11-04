@@ -29,10 +29,44 @@
 	<input type="number" placeholder="공급자번호" id="supplierIdInput1" value="1">
 	<br>
 	<button id="btn7">/ex47/sub07/customerId, supplier json 응답 </button>
+	<br>
+	<input type="number" placeholder="고객번호" id="customerIdInput8" value="1">
+	<br>
+	<button id="btn8">/ex47/sub08/customerId, customer json 응답 </button>
+	<div id="customerInfoDiv">
+		id : <span class="id"></span> <br>
+		name : <span class="name"></span> <br>
+		city : <span class="city"></span> <br>
+		country : <span class="country"></span>
+	</div>
+	<div id="messageDiv"></div>
+	
 	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";
+
+document.querySelector("#btn8").addEventListener("click", function() {
+	// 텍스트 초기화
+	document.querySelector("#messageDiv").innerText = "";
+	document.querySelector("#customerInfoDiv .id").innerText = "";
+	document.querySelector("#customerInfoDiv .name").innerText = "";
+	document.querySelector("#customerInfoDiv .city").innerText = "";
+	document.querySelector("#customerInfoDiv .country").innerText = "";
+	
+	const customerId = document.querySelector("#customerIdInput8").value;
+	fetch(ctx + "/ex47/sub08/" + customerId)
+	.then(res => res.json())
+	.then(data => {
+		// html에 출력
+		document.querySelector("#messageDiv").innerText = data.message;
+		document.querySelector("#customerInfoDiv .id").innerText = data.customer.id;
+		document.querySelector("#customerInfoDiv .name").innerText = data.customer.name;
+		document.querySelector("#customerInfoDiv .city").innerText = data.customer.city;
+		document.querySelector("#customerInfoDiv .country").innerText = data.customer.country;
+	});
+});
+
 document.querySelector("#btn7").addEventListener("click", function() {
 	const id = document.querySelector("#supplierIdInput1").value;
 	

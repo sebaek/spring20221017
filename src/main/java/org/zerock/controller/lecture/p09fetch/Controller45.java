@@ -170,6 +170,18 @@ public class Controller45 {
 		
 		return map;
 	}
+	
+	@GetMapping("sub15")
+	@ResponseBody
+	public Map<String, Object> method15() {
+		Map<String, Object> map = new HashMap<>();
+		map.put("car", "tesla");
+		map.put("model", "avante");
+		map.put("color", List.of("blue", "red"));
+		
+		
+		return map;
+	}
 }
 
 

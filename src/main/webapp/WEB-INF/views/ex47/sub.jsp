@@ -12,6 +12,7 @@
 </head>
 <body>
 	<h1>json 응답 처리</h1>
+	<div id="messageDiv"></div>
 	<button id="btn1">/ex47/sub01 json 응답</button>
 	<br>
 	<button id="btn2">/ex47/sub01 json 응답</button>
@@ -39,7 +40,16 @@
 		city : <span class="city"></span> <br>
 		country : <span class="country"></span>
 	</div>
-	<div id="messageDiv"></div>
+	<input type="number" placeholder="공급자번호" id="supplierIdInput9" value="1">
+	<br>
+	<button id="btn9">/ex47/sub09/supplierId, supplier json 응답 </button>
+	<div id="supplierInfoDiv">
+		id : <span class="id"></span> <br>
+		name : <span class="name"></span> <br>
+		city : <span class="city"></span> <br>
+		country : <span class="country"></span>
+	</div>
+
 	
 	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>

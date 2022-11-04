@@ -9,6 +9,17 @@
 <title>Insert title here</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+	#messageDiv {
+		padding : 15px;
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		background-color: yellow;
+		border: 5px solid black;
+		font-weight: bold;
+	}
+</style>
 </head>
 <body>
 	<h1>json 응답 처리</h1>
@@ -55,6 +66,27 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";
+
+document.querySelector("#btn9").addEventListener("click", function() {
+	// 데이터 지우기
+	document.querySelector("#supplierInfoDiv .id").innerText = "";
+	document.querySelector("#supplierInfoDiv .name").innerText = "";
+	document.querySelector("#supplierInfoDiv .city").innerText = "";
+	document.querySelector("#supplierInfoDiv .country").innerText = "";
+	
+	const supplierID = document.querySelector("#supplierIdInput9").value;
+	
+	fetch(ctx + "/ex47/sub09/" + supplierID)
+	.then(res => res.json())
+	.then(data => {
+		document.querySelector("#messageDiv").innerText = data.message;
+		// html에 데이터 보여주기
+		document.querySelector("#supplierInfoDiv .id").innerText = data.supplier.id;
+		document.querySelector("#supplierInfoDiv .name").innerText = data.supplier.name;
+		document.querySelector("#supplierInfoDiv .city").innerText = data.supplier.city;
+		document.querySelector("#supplierInfoDiv .country").innerText = data.supplier.country;
+	});
+});
 
 document.querySelector("#btn8").addEventListener("click", function() {
 	// 텍스트 초기화

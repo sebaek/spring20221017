@@ -78,6 +78,23 @@ public class Controller47 {
 		
 		return map;
 	}
+	
+	@GetMapping("sub09/{id}")
+	@ResponseBody
+	public Map<String, Object> method9(@PathVariable int id) {
+		Map<String, Object> map = new HashMap<>();
+		JavaBean19 supplier = mapper.getSupplierById(id);
+		
+		if (supplier != null) {
+			map.put("message", "공급자가 조회되었습니다.");
+			map.put("supplier", supplier);
+			
+		} else {
+			map.put("message", "공급자가 조회되지 않았습니다.");
+		}
+		
+		return map;
+	}
 }
 
 

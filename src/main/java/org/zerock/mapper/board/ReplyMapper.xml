@@ -5,6 +5,11 @@
   
 <mapper namespace="org.zerock.mapper.board.ReplyMapper">
 
+	<delete id="deleteById">
+	DELETE FROM Reply
+	WHERE id = #{id}
+	</delete>
+
 	<select id="selectReplyByBoardId" resultType="org.zerock.domain.board.ReplyDto">
 	SELECT 
 		id,

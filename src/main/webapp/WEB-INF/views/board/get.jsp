@@ -111,11 +111,18 @@ function listReply() {
 			document.querySelector("#" + removeReplyButtonId)
 				.addEventListener("click", function() {
 					// console.log(this.id + "번 삭제버튼 클릭됨");
-					console.log(this.dataset.replyId + "번 댓글 삭제할 예정")
-					// removeReply(this.dataset.replyId);
+					// console.log(this.dataset.replyId + "번 댓글 삭제할 예정")
+					removeReply(this.dataset.replyId);
 				});
 		}
 	});
+}
+
+function removeReply(replyId) {
+	// /reply/remove/{id}, method:"delete"
+	fetch(ctx + "/reply/remove/" + replyId, {
+		method: "delete"
+	})
 }
 
 document.querySelector("#replySendButton1").addEventListener("click", function() {

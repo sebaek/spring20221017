@@ -105,12 +105,14 @@ function listReply() {
 			const replyDiv = `
 				<div>
 					\${item.content} : \${item.inserted}
-					<button id="\${removeReplyButtonId}">삭제</button>
+					<button data-reply-id="\${item.id}" id="\${removeReplyButtonId}">삭제</button>
 				</div>`;
 			replyListContainer.insertAdjacentHTML("beforeend", replyDiv);
 			document.querySelector("#" + removeReplyButtonId)
 				.addEventListener("click", function() {
-					console.log(this.id + "번 삭제버튼 클릭됨");
+					// console.log(this.id + "번 삭제버튼 클릭됨");
+					console.log(this.dataset.replyId + "번 댓글 삭제할 예정")
+					// removeReply(this.dataset.replyId);
 				});
 		}
 	});

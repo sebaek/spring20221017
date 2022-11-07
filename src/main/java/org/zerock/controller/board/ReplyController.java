@@ -32,8 +32,9 @@ public class ReplyController {
 		if (cnt == 1) {
 			map.put("message", "댓글이 삭제되었습니다.");
 		} else {
-			map.put("message", "댓글이 삭제되지 않았습니다.")
+			map.put("message", "댓글이 삭제되지 않았습니다.");
 		}
+		return map;
 	}
 	
 	@GetMapping("list/{boardId}")

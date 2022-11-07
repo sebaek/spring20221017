@@ -26,6 +26,8 @@ public interface Mapper11 {
 	int deleteSupplier(int id);
 
 	List<JavaBean19> getSuppliers();
+
+	List<JavaBean18> getCustomers();
 }
 
 

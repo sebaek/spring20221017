@@ -12,9 +12,28 @@
 </head>
 <body>
 	<h1>여러 데이터 얻기</h1>
+	
+	<div id="result1"></div>
+	
+	<button id="btn1">/ex48/sub01 get : 응답 customer list (array)</button>
+	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script>
+const ctx = "${pageContext.request.contextPath}";
+
+document.querySelector("#btn1").addEventListener("click", function() {
+	fetch(ctx + "/ex48/sub01")
+});
+</script>
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 

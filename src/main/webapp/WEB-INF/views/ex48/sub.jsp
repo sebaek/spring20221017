@@ -23,6 +23,15 @@ const ctx = "${pageContext.request.contextPath}";
 
 document.querySelector("#btn1").addEventListener("click", function() {
 	fetch(ctx + "/ex48/sub01")
+		.then(res => res.json())
+		.then(list => {
+			for (const item of list) {
+				console.log(`\${item.id} 번은 \${item.name}`);
+				
+				let listItem = `<li>\${item.id} : \${item.name}</li>`;
+				document.querySelector("#result1").insertAdjacentHTML("beforeend", listItem);
+			}
+		});
 });
 </script>
 </body>

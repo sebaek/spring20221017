@@ -23,6 +23,12 @@ public class ReplyController {
 	@Autowired
 	private ReplyService service;
 	
+	@GetMapping("get/{id}")
+	@ResponseBody
+	public ReplyDto get(@PathVariable int id) {
+		return service.getById(id);
+	}
+	
 	@DeleteMapping("remove/{id}")
 	@ResponseBody
 	public Map<String, Object> remove(@PathVariable int id) {

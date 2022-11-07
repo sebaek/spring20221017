@@ -106,6 +106,26 @@
 	  </div>
 	</div>
 	
+	<%-- 댓글 수정 모달 --%>
+	<!-- Modal -->
+	<div class="modal fade" id="modifyReplyFormModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h1 class="modal-title fs-5">댓글 수정 양식</h1>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <div class="modal-body">
+	        <input type="text" id="modifyReplyInput">
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+	        <button type="button" data-bs-dismiss="modal" id="modifyFormModalSubmitButton" class="btn btn-danger">수정</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";
@@ -115,6 +135,12 @@ listReply();
 document.querySelector("#removeConfirmModalSubmitButton").addEventListener("click", function() {
 	removeReply(this.dataset.replyId);
 });
+
+function readReplyAndSetModalForm(id) {
+	fetch(`\${ctx}/reply/get/\${id}`)
+	.then(res => res.json())
+	.then(reply => console.log(reply));
+}
 
 function listReply() {
 	const boardId = document.querySelector("#boardId").value;
@@ -126,14 +152,24 @@ function listReply() {
 		
 		for (const item of list) {
 			
+			const modifyReplyButtonId = `modifyReplyButton\${item.id}`;
 			const removeReplyButtonId = `removeReplyButton\${item.id}`;
 			// console.log(item.id);
 			const replyDiv = `
 				<div>
 					\${item.content} : \${item.inserted}
+					<button data-bs-toggle="modal" data-bs-target="#modifyReplyFormModal" data-reply-id="\${item.id}" id="\${modifyReplyButtonId}">수정</button>
 					<button data-bs-toggle="modal" data-bs-target="#removeReplyConfirmModal" data-reply-id="\${item.id}" id="\${removeReplyButtonId}">삭제</button>
 				</div>`;
 			replyListContainer.insertAdjacentHTML("beforeend", replyDiv);
+			// 수정 폼 모달에 댓글 내용 넣기
+			document.querySelector("#" + modifyReplyButtonId)
+				.addEventListener("click", function() {
+					readReplyAndSetModalForm(this.dataset.replyId);
+				});
+			
+			
+			// 삭제확인 버튼에 replyId 옮기기
 			document.querySelector("#" + removeReplyButtonId)
 				.addEventListener("click", function() {
 					// console.log(this.id + "번 삭제버튼 클릭됨");

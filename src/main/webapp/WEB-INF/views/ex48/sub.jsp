@@ -17,6 +17,27 @@
 	
 	<button id="btn1">/ex48/sub01 get : 응답 customer list (array)</button>
 	
+	<hr>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Name</th>
+				<th>ContactName</th>
+				<th>Address</th>
+				<th>City</th>
+				<th>PostalCode</th>
+				<th>Country</th>
+				<th>Phone</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!--  공급자 정보 tr 추가 하기 -->
+		</tbody>
+	</table>
+	
+	<button id="btn2">/ex48/sub02 get : 응답 suppliers list (array)</button>
+	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";

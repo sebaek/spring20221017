@@ -62,6 +62,10 @@
 		</div>
 	</div>
 	
+	<hr>
+	
+	<div id="replyMessage1">
+	</div>
 	
 	<div class="container-md">
 		<div class="row">
@@ -92,6 +96,10 @@ document.querySelector("#replySendButton1").addEventListener("click", function()
 		},
 		body : JSON.stringify(data)
 	})
+	.then(res => res.json())
+	.then(data => {
+		document.querySelector("#replyMessage1").innerText = data.message;
+	});
 });
 </script>
 </body>

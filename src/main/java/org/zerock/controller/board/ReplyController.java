@@ -1,10 +1,14 @@
 package org.zerock.controller.board;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.zerock.domain.board.ReplyDto;
 import org.zerock.service.board.ReplyService;
 
@@ -16,9 +20,19 @@ public class ReplyController {
 	private ReplyService service;
 
 	@PostMapping("add")
-	public void add(@RequestBody ReplyDto reply) {
+	@ResponseBody
+	public Map<String, Object> add(@RequestBody ReplyDto reply) {
 //		System.out.println(reply);
-		service.addReply(reply);
+		Map<String, Object> map = new HashMap<>();
+		
+		int cnt = service.addReply(reply);
+		if (cnt == 1) {
+			map.put("message", "새 댓글이 등록되었습니다.");
+		} else {
+			map.put("message", "새 댓글이 등록되지 않았습니다.");
+		}
+		
+		return map;
 	}
 }
 

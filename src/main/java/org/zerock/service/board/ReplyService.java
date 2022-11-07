@@ -30,6 +30,11 @@ public class ReplyService {
 		return mapper.selectById(id);
 	}
 
+	public int modify(ReplyDto reply) {
+		// TODO Auto-generated method stub
+		return mapper.update(reply);
+	}
+
 }
 
 

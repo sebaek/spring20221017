@@ -5,6 +5,14 @@
   
 <mapper namespace="org.zerock.mapper.board.ReplyMapper">
 
+	<update id="update">
+	UPDATE Reply
+	SET
+		content = #{content}
+	WHERE 
+		id = #{id}
+	</update>
+
 	<select id="selectById" resultType="org.zerock.domain.board.ReplyDto">
 	SELECT
 		id,

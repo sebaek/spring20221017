@@ -24,8 +24,16 @@ public class ReplyController {
 	private ReplyService service;
 	
 	@DeleteMapping("remove/{id}")
-	public void remove(@PathVariable int id) {
-		service.removeById(id);
+	@ResponseBody
+	public Map<String, Object> remove(@PathVariable int id) {
+		Map<String, Object> map = new HashMap<>();
+		
+		int cnt = service.removeById(id);
+		if (cnt == 1) {
+			map.put("message", "댓글이 삭제되었습니다.");
+		} else {
+			map.put("message", "댓글이 삭제되지 않았습니다.")
+		}
 	}
 	
 	@GetMapping("list/{boardId}")

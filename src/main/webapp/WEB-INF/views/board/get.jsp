@@ -123,6 +123,8 @@ function removeReply(replyId) {
 	fetch(ctx + "/reply/remove/" + replyId, {
 		method: "delete"
 	})
+	.then(res => res.json())
+	.then(data => console.log(data.message));
 }
 
 document.querySelector("#replySendButton1").addEventListener("click", function() {

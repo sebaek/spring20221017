@@ -124,7 +124,8 @@ function removeReply(replyId) {
 		method: "delete"
 	})
 	.then(res => res.json())
-	.then(data => console.log(data.message));
+	.then(data => document.querySelector("#replyMessage1").innerText = data.message)
+	.then(() => listReply());
 }
 
 document.querySelector("#replySendButton1").addEventListener("click", function() {

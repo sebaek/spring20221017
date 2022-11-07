@@ -124,6 +124,7 @@ document.querySelector("#replySendButton1").addEventListener("click", function()
 	})
 	.then(res => res.json())
 	.then(data => {
+		document.querySelector("#replyInput1").value = "";
 		document.querySelector("#replyMessage1").innerText = data.message;
 	})
 	.then(() => listReply());

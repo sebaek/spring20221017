@@ -31,7 +31,7 @@
 				<th>Phone</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody id="supplierTableBody1">
 			<!--  공급자 정보 tr 추가 하기 -->
 		</tbody>
 	</table>
@@ -41,6 +41,26 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";
+
+document.querySelector("#btn2").addEventListener("click", function() {
+	fetch(ctx + "/ex48/sub02")
+		.then(res => res.json())
+		.then(list => {
+			for (const item of list) {
+				const tableRow = `<tr>
+					<td>\${item.id}</td>
+					<td>\${item.name}</td>
+					<td>\${item.contactName}</td>
+					<td>\${item.address}</td>
+					<td>\${item.city}</td>
+					<td>\${item.postalCode}</td>
+					<td>\${item.country}</td>
+					<td>\${item.phone}</td>
+				</tr>`;
+				document.querySelector("#supplierTableBody1").insertAdjacentHTML("beforeend", tableRow);
+			}
+		});
+});
 
 document.querySelector("#btn1").addEventListener("click", function() {
 	fetch(ctx + "/ex48/sub01")

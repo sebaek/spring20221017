@@ -99,9 +99,19 @@ function listReply() {
 		replyListContainer.innerHTML = "";
 		
 		for (const item of list) {
+			
+			const removeReplyButtonId = `removeReplyButton\${item.id}`;
 			// console.log(item.id);
-			const replyDiv = `<div>\${item.content} : \${item.inserted}</div>`;
+			const replyDiv = `
+				<div>
+					\${item.content} : \${item.inserted}
+					<button id="\${removeReplyButtonId}">삭제</button>
+				</div>`;
 			replyListContainer.insertAdjacentHTML("beforeend", replyDiv);
+			document.querySelector("#" + removeReplyButtonId)
+				.addEventListener("click", function() {
+					console.log(this.id + "번 삭제버튼 클릭됨");
+				});
 		}
 	});
 }

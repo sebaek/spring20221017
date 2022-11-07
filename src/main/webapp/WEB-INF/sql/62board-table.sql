@@ -48,6 +48,7 @@ CREATE TABLE Reply (
     FOREIGN KEY (boardId) REFERENCES Board(id)
 );
 DESC Reply;
+SELECT * FROM Reply ORDER BY 1 DESC;
 
 
 

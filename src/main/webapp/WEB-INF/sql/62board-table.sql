@@ -39,6 +39,25 @@ WHERE title LIKE '%프링%'
    OR content LIKE '%프링%'
    OR writer LIKE '%프링%';
 
+-- 댓글 테이블 만들기
+CREATE TABLE Reply (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	boardId INT NOT NULL,
+    content VARCHAR(1000) NOT NULL,
+    inserted DATETIME DEFAULT NOW(),
+    FOREIGN KEY (boardId) REFERENCES Board(id)
+);
+DESC Reply;
+
+
+
+
+
+
+
+
+
+
 
 
 

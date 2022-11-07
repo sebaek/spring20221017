@@ -5,6 +5,20 @@
   
 <mapper namespace="org.zerock.mapper.board.ReplyMapper">
 
+	<select id="selectReplyByBoardId" resultType="org.zerock.domain.board.ReplyDto">
+	SELECT 
+		id,
+		boardId,
+		content,
+		inserted
+	FROM
+		Reply
+	WHERE
+		boardId = #{boardId}
+	ORDER BY
+		id DESC
+	</select>
+
 	<insert id="insert">
 	INSERT INTO Reply (boardId, content)
 	VALUES (#{boardId}, #{content})

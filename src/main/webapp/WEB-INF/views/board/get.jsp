@@ -96,7 +96,9 @@ function listReply() {
 	.then(res => res.json())
 	.then(list => {
 		for (const item of list) {
-			console.log(item.id);
+			// console.log(item.id);
+			const replyDiv = `<div>\${item.content} : \${item.inserted}</div>`;
+			document.querySelector("#replyListContainer").insertAdjacentHTML("beforeend", replyDiv);
 		}
 	});
 }

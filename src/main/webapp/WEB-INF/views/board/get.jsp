@@ -84,11 +84,37 @@
 			</div>
 		</div>
 	</div>
+	
+	
+	<%-- 댓글 삭제 확인 모달 --%>
+	<!-- Modal -->
+	<div class="modal fade" id="removeReplyConfirmModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h1 class="modal-title fs-5" id="exampleModalLabel">댓글 삭제 확인</h1>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <div class="modal-body">
+	        댓글을 삭제하시겠습니까?
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+	        <button type="button" data-bs-dismiss="modal" id="removeConfirmModalSubmitButton" class="btn btn-danger">삭제</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
 const ctx = "${pageContext.request.contextPath}";
 
 listReply();
+
+document.querySelector("#removeConfirmModalSubmitButton").addEventListener("click", function() {
+	removeReply(this.dataset.replyId);
+});
 
 function listReply() {
 	const boardId = document.querySelector("#boardId").value;
@@ -105,14 +131,15 @@ function listReply() {
 			const replyDiv = `
 				<div>
 					\${item.content} : \${item.inserted}
-					<button data-reply-id="\${item.id}" id="\${removeReplyButtonId}">삭제</button>
+					<button data-bs-toggle="modal" data-bs-target="#removeReplyConfirmModal" data-reply-id="\${item.id}" id="\${removeReplyButtonId}">삭제</button>
 				</div>`;
 			replyListContainer.insertAdjacentHTML("beforeend", replyDiv);
 			document.querySelector("#" + removeReplyButtonId)
 				.addEventListener("click", function() {
 					// console.log(this.id + "번 삭제버튼 클릭됨");
-					// console.log(this.dataset.replyId + "번 댓글 삭제할 예정")
-					removeReply(this.dataset.replyId);
+					console.log(this.dataset.replyId + "번 댓글 삭제할 예정, 모달 띄움")
+					document.querySelector("#removeConfirmModalSubmitButton").setAttribute("data-reply-id", this.dataset.replyId);
+					// removeReply(this.dataset.replyId);
 				});
 		}
 	});

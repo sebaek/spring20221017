@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.zerock.domain.board.BoardDto;
 import org.zerock.domain.board.PageInfo;
 import org.zerock.mapper.board.BoardMapper;
@@ -64,10 +65,12 @@ public class BoardSerivce {
 		return boardMapper.update(board);	
 	}
 
+	@Transactional
 	public int remove(int id) {
 		// 게시물의 댓글들 지우기
 		replyMapper.deleteByBoardId(id);
 		
+//		int a = 3 / 0; // runtime exception
 		
 		// 게시물 지우기
 		return boardMapper.delete(id);

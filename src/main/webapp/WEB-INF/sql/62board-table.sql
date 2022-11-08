@@ -80,7 +80,18 @@ DESC File;
 
 SELECT * FROM File ORDER BY 1 DESC;
 
-
+-- 여러 파일이 있는 게시물 조회
+	SELECT
+		b.id,
+		b.title,
+		b.content,
+		b.writer,
+		b.inserted,
+		f.name fileName
+	FROM
+		Board b LEFT JOIN File f ON b.id = f.boardId
+	WHERE
+		b.id = 1029;
 
 
 

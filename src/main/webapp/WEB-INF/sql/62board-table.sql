@@ -50,7 +50,16 @@ CREATE TABLE Reply (
 DESC Reply;
 SELECT * FROM Reply ORDER BY 1 DESC;
 
-
+-- 댓글 수가 결과로 같이 나오는 Board Table 조회 쿼리 작성
+	SELECT 
+		b.id,
+		b.title,
+		b.writer,
+		b.inserted,
+        COUNT(r.id) 
+	FROM Board b LEFT JOIN Reply r ON b.id = r.boardId
+    GROUP BY b.id
+	ORDER BY b.id DESC
 
 
 

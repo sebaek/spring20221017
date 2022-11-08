@@ -74,8 +74,9 @@ CREATE TABLE File (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	boardId INT NOT NULL,
     name VARCHAR(512) NOT NULL,
-    FOREIGN KEY (boardId) REFERENCES board(id)
+    FOREIGN KEY (boardId) REFERENCES Board(id)
 );
+DESC File;
 
 
 

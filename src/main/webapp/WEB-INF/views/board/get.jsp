@@ -202,7 +202,8 @@ function listReply() {
 						<div>
 							\${item.content}
 						</div>
-							<small>
+							<small class="text-muted">
+								<i class="fa-regular fa-clock"></i> 
 								\${item.ago}
 							</small>
 					</div>

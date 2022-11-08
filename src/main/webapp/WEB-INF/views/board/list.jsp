@@ -48,7 +48,10 @@
 									</a>
 									
 									<c:if test="${board.countReply > 0 }">
-										댓글 : ${board.countReply }
+										<span class="badge rounded-pill text-bg-light">
+											<i class="fa-regular fa-comment-dots"></i>
+											${board.countReply }
+										</span>
 									</c:if>
 								</td>
 								<td>${board.writer }</td>

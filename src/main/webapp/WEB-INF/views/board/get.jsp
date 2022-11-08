@@ -116,7 +116,7 @@
 	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 	      </div>
 	      <div class="modal-body">
-	        <input type="text" id="modifyReplyInput">
+	        <input type="text" class="form-control" id="modifyReplyInput">
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

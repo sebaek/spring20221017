@@ -5,6 +5,11 @@
   
 <mapper namespace="org.zerock.mapper.board.BoardMapper">
 
+	<insert id="insertFile">
+	INSERT INTO File (boardId, name)
+	VALUES (#{id}, #{fileName})
+	</insert>
+
 	<select id="countAll" resultType="int">
 	SELECT COUNT(*) FROM Board
 	WHERE

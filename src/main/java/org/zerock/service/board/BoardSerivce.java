@@ -25,9 +25,13 @@ public class BoardSerivce {
 		// db에 게시물 정보 저장
 		int cnt = boardMapper.insert(board);
 		
-		// db에 파일 정보 저장
-		
-		// 파일 저장
+		if (file != null && file.getSize() > 0) {
+			// db에 파일 정보 저장
+			boardMapper.insertFile(board.getId(), file.getOriginalFilename());
+			
+			// 파일 저장
+			
+		}
 		
 		
 		

@@ -69,7 +69,13 @@ UPDATE Reply SET inserted = DATE(NOW()-INTERVAL 60 DAY) WHERE id = 58;
 UPDATE Reply SET inserted = DATE(NOW()-INTERVAL 400 DAY) WHERE id = 57;
 UPDATE Reply SET inserted = DATE(NOW()-INTERVAL 800 DAY) WHERE id < 57;
 
-
+-- 파일 테이블 만들기
+CREATE TABLE File (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	boardId INT NOT NULL,
+    name VARCHAR(512) NOT NULL,
+    FOREIGN KEY (boardId) REFERENCES board(id)
+);
 
 
 

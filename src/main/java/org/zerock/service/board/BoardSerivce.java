@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 import org.zerock.domain.board.BoardDto;
 import org.zerock.domain.board.PageInfo;
 import org.zerock.mapper.board.BoardMapper;
@@ -19,8 +20,18 @@ public class BoardSerivce {
 	@Autowired
 	private ReplyMapper replyMapper;
 	
-	public int register(BoardDto board) {
-		return boardMapper.insert(board);
+	@Transactional
+	public int register(BoardDto board, MultipartFile file) {
+		// db에 게시물 정보 저장
+		int cnt = boardMapper.insert(board);
+		
+		// db에 파일 정보 저장
+		
+		// 파일 저장
+		
+		
+		
+		return cnt;
 	}
 
 	public List<BoardDto> listBoard(int page, String type, String keyword, PageInfo pageInfo) {

@@ -43,7 +43,7 @@ public class BoardController {
 		System.out.println(file.getOriginalFilename());
 		
 		// business logic
-		int cnt = service.register(board);
+		int cnt = service.register(board, file);
 		
 		if (cnt == 1) {
 			rttr.addFlashAttribute("message", "새 게시물이 등록되었습니다.");

@@ -203,7 +203,7 @@ function listReply() {
 							\${item.content}
 						</div>
 							<small>
-								\${item.inserted}
+								\${item.ago}
 							</small>
 					</div>
 					<div>

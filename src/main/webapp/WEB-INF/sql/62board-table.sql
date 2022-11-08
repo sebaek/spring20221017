@@ -59,7 +59,16 @@ SELECT * FROM Reply ORDER BY 1 DESC;
         COUNT(r.id) countReply
 	FROM Board b LEFT JOIN Reply r ON b.id = r.boardId
     GROUP BY b.id
-	ORDER BY b.id DESC
+	ORDER BY b.id DESC;
+    
+-- 댓글 입력 시간 변경
+SELECT * FROM Reply WHERE boardId = 1019 ORDER BY id DESC;
+UPDATE Reply SET inserted = DATE(NOW()-INTERVAL 6 DAY) WHERE id = 60;
+UPDATE Reply SET inserted = DATE(NOW()-INTERVAL 15 DAY) WHERE id = 59;
+UPDATE Reply SET inserted = DATE(NOW()-INTERVAL 60 DAY) WHERE id = 58;
+UPDATE Reply SET inserted = DATE(NOW()-INTERVAL 400 DAY) WHERE id = 57;
+UPDATE Reply SET inserted = DATE(NOW()-INTERVAL 600 DAY) WHERE id < 57;
+
 
 
 

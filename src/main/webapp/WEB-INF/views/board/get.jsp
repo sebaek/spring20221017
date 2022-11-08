@@ -64,7 +64,14 @@
 	
 	<hr>
 	
-	<div id="replyMessage1">
+	<%-- 댓글 메시지 토스트 --%>
+	<div id="replyMessageToast" class="toast align-items-center top-0 start-50 translate-middle-x position-fixed" role="alert" aria-live="assertive" aria-atomic="true">
+	  <div class="d-flex">
+	    <div id="replyMessage1" class="toast-body">
+	      Hello, world! This is a toast message.
+	    </div>
+	    <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+	  </div>
 	</div>
 	
 	<div class="container-md">
@@ -132,6 +139,9 @@ const ctx = "${pageContext.request.contextPath}";
 
 listReply();
 
+// 댓글 crud 메시지 토스트
+const toast = new bootstrap.Toast(document.querySelector("#replyMessageToast"));
+
 document.querySelector("#modifyFormModalSubmitButton").addEventListener("click", function() {
 	const content = document.querySelector("#modifyReplyInput").value;
 	const id = this.dataset.replyId;
@@ -145,7 +155,10 @@ document.querySelector("#modifyFormModalSubmitButton").addEventListener("click",
 		body : JSON.stringify(data)
 	})
 	.then(res => res.json())
-	.then(data => document.querySelector("#replyMessage1").innerText = data.message)
+	.then(data => {
+		document.querySelector("#replyMessage1").innerText = data.message;
+		toast.show();
+	})
 	.then(() => listReply());
 });
 
@@ -207,7 +220,10 @@ function removeReply(replyId) {
 		method: "delete"
 	})
 	.then(res => res.json())
-	.then(data => document.querySelector("#replyMessage1").innerText = data.message)
+	.then(data => {
+		document.querySelector("#replyMessage1").innerText = data.message;
+		toast.show();
+	})
 	.then(() => listReply());
 }
 
@@ -231,6 +247,7 @@ document.querySelector("#replySendButton1").addEventListener("click", function()
 	.then(data => {
 		document.querySelector("#replyInput1").value = "";
 		document.querySelector("#replyMessage1").innerText = data.message;
+		toast.show();
 	})
 	.then(() => listReply());
 });

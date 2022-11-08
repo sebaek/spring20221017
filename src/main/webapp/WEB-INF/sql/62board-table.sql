@@ -56,7 +56,7 @@ SELECT * FROM Reply ORDER BY 1 DESC;
 		b.title,
 		b.writer,
 		b.inserted,
-        COUNT(r.id) 
+        COUNT(r.id) countReply
 	FROM Board b LEFT JOIN Reply r ON b.id = r.boardId
     GROUP BY b.id
 	ORDER BY b.id DESC

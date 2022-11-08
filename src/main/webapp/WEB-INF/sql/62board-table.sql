@@ -78,6 +78,7 @@ CREATE TABLE File (
 );
 DESC File;
 
+SELECT * FROM File ORDER BY 1 DESC;
 
 
 

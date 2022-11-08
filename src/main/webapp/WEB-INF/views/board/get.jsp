@@ -43,6 +43,11 @@
 					<textarea rows="5" class="form-control" readonly>${board.content }</textarea>
 				</div>
 				
+				<%-- 이미지 출력 --%>
+				<div>
+					<img src="/image/${board.id }/${board.fileName}" alt="">
+				</div>
+				
 				<div class="mb-3">
 					<label for="" class="form-label">
 						작성자 

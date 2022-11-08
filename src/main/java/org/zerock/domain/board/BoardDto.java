@@ -14,6 +14,8 @@ public class BoardDto {
 	private String writer;
 	private LocalDateTime inserted;
 	private int countReply;
+	
+	private String fileName;
 
 	public String getAgo() {
 		LocalDateTime now = LocalDateTime.now();

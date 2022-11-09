@@ -122,14 +122,7 @@ public class BoardController {
 			@RequestParam("files") MultipartFile[] files,
 			RedirectAttributes rttr) {
 		
-		if (files != null) {
-			System.out.println(files.length);
-			for (MultipartFile file : files) {
-				System.out.println(file.getOriginalFilename());
-			}
-		}
-		
-		int cnt = service.update(board);
+		int cnt = service.update(board, files);
 		
 		if (cnt == 1) {
 			rttr.addFlashAttribute("message", board.getId() + "번 게시물이 수정되었습니다.");

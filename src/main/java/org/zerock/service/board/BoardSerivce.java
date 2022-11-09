@@ -88,7 +88,13 @@ public class BoardSerivce {
 		return boardMapper.select(id);
 	}
 
-	public int update(BoardDto board) {
+	public int update(BoardDto board, MultipartFile[] files) {
+		// File table에 해당파일명 지우기
+		
+		// File table에 파일명 추가
+		
+		// 저장소에 실제 파일 추가
+		
 		
 		return boardMapper.update(board);	
 	}

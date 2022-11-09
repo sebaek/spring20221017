@@ -143,10 +143,8 @@ public class BoardSerivce {
 		
 		File[] listFiles = folder.listFiles();
 		
-		if (listFiles != null) {
-			for (File file : listFiles) {
-				file.delete();
-			}
+		for (File file : listFiles) {
+			file.delete();
 		}
 		
 		folder.delete();

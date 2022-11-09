@@ -92,6 +92,8 @@ SELECT * FROM File ORDER BY 1 DESC;
 		Board b LEFT JOIN File f ON b.id = f.boardId
 	WHERE
 		b.id = 1029;
+        
+
 
 
 

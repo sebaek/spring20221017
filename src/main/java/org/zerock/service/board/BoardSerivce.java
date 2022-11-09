@@ -95,6 +95,12 @@ public class BoardSerivce {
 
 	@Transactional
 	public int remove(int id) {
+		// 저장소의 파일 지우기
+		
+		// db 파일 records 지우기
+		boardMapper.deleteFileByBoardId(id);
+		
+		
 		// 게시물의 댓글들 지우기
 		replyMapper.deleteByBoardId(id);
 		

@@ -93,14 +93,16 @@ public class BoardSerivce {
 		
 		// removeFiles 에 있는 파일명으로 
 		
-		for (String fileName : removeFiles) {
-			// 1. File 테이블에서 record 지우기
-			boardMapper.deleteFileByBoardIdAndFileName(boardId, fileName);
-			// 2. 저장소에 실제 파일 지우기
-			String path = "C:\\Users\\user\\Desktop\\study\\upload\\prj1\\board\\" + boardId + "\\" + fileName;
-			File file = new File(path);
-			
-			file.delete();
+		if (removeFiles != null) {
+			for (String fileName : removeFiles) {
+				// 1. File 테이블에서 record 지우기
+				boardMapper.deleteFileByBoardIdAndFileName(boardId, fileName);
+				// 2. 저장소에 실제 파일 지우기
+				String path = "C:\\Users\\user\\Desktop\\study\\upload\\prj1\\board\\" + boardId + "\\" + fileName;
+				File file = new File(path);
+				
+				file.delete();
+			}
 		}
 		
 		

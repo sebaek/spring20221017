@@ -120,7 +120,7 @@ public class BoardController {
 	public String modify(
 			BoardDto board, 
 			@RequestParam("files") MultipartFile[] addFiles,
-			@RequestParam("removeFiles") List<String> removeFiles,
+			@RequestParam(name = "removeFiles", required = false) List<String> removeFiles,
 			RedirectAttributes rttr) {
 		
 		int cnt = service.update(board, addFiles, removeFiles);

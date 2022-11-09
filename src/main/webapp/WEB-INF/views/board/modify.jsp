@@ -19,7 +19,7 @@
 
 				<h1>${board.id }번 게시물 수정</h1>
 				
-				<form id="modifyForm" action="" method="post">
+				<form id="modifyForm" action="" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="id" value="${board.id }">
 					<!-- .mb-3*4>label.form-label+input.form-control -->
 					<div class="mb-3">
@@ -32,12 +32,17 @@
 					</div>
 					
 					<%-- 이미지 출력 --%>
-					<div>
+					<div class="mb-3">
 						<c:forEach items="${board.fileName }" var="name">
 							<div>
 								<img class="img-fluid img-thumbnail" src="/image/${board.id }/${name}" alt="">
 							</div>
 						</c:forEach>		
+					</div>
+					
+					<div class="mb-3">
+						<label for="" class="form-label">파일 추가</label>
+						<input multiple type="file" accept="image/*" class="form-control" name="files">
 					</div>
 					
 					<div class="mb-3">

@@ -88,9 +88,15 @@ public class BoardSerivce {
 		return boardMapper.select(id);
 	}
 
-	public int update(BoardDto board, MultipartFile[] files) {
+	public int update(BoardDto board, MultipartFile[] addFiles, List<String> removeFiles) {
+		// removeFiles 에 있는 파일명으로 
 		
-		for (MultipartFile file : files) {
+		// 1. File 테이블에서 record 지우기
+		
+		// 2. 저장소에 실제 파일 지우기
+		
+		
+		for (MultipartFile file : addFiles) {
 			if (file != null && file.getSize() > 0) {
 				int boardId = board.getId();
 				String name = file.getOriginalFilename();

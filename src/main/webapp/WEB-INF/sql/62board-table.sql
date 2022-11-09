@@ -94,7 +94,18 @@ SELECT * FROM File ORDER BY 1 DESC;
 		b.id = 1029;
         
 
-
+-- 댓글 수, 파일 수가 결과로 같이 나오는 Board Table 조회 쿼리 작성
+	SELECT 
+		b.id,
+		b.title,
+		b.writer,
+		b.inserted,
+        COUNT(DISTINCT r.id) countReply,
+        COUNT(DISTINCT f.id) countFile
+	FROM Board b LEFT JOIN Reply r ON b.id = r.boardId
+                 LEFT JOIN File f ON b.id = f.boardId
+    GROUP BY b.id
+	ORDER BY b.id DESC;
 
 
 

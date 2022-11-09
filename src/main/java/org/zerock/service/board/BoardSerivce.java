@@ -96,6 +96,16 @@ public class BoardSerivce {
 	@Transactional
 	public int remove(int id) {
 		// 저장소의 파일 지우기
+		String path = "C:\\Users\\user\\Desktop\\study\\upload\\prj1\\board\\" + id;
+		File folder = new File(path);
+		
+		File[] listFiles = folder.listFiles();
+		
+		for (File file : listFiles) {
+			file.delete();
+		}
+		
+		folder.delete();
 		
 		// db 파일 records 지우기
 		boardMapper.deleteFileByBoardId(id);

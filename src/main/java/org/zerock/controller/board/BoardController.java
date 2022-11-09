@@ -120,7 +120,15 @@ public class BoardController {
 	public String modify(
 			BoardDto board, 
 			@RequestParam("files") MultipartFile[] files,
+			@RequestParam("removeFiles") List<String> removeFiles,
 			RedirectAttributes rttr) {
+		// 지울 파일명 들어오는 지 확인
+		System.out.println("지울 파일명####");
+		if (removeFiles != null) {
+			for (String name : removeFiles) {
+				System.out.println(name);
+			}
+		}
 		
 		int cnt = service.update(board, files);
 		

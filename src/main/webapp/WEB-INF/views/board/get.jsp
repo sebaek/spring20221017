@@ -48,7 +48,7 @@
 				<div>
 					<c:forEach items="${board.fileName }" var="name">
 						<div>
-							<img class="img-fluid img-thumbnail" src="https://study-2022-08-02-29871827375.s3.ap-northeast-2.amazonaws.com/prj1/board/${board.id }/${URLEncoder.encode(name, 'utf-8')}" alt="">
+							<img class="img-fluid img-thumbnail" src="${imgUrl }/${board.id }/${URLEncoder.encode(name, 'utf-8')}" alt="">
 						</div>
 					</c:forEach>		
 				</div>

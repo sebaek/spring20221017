@@ -31,7 +31,7 @@ public class BoardSerivce {
 	@Autowired
 	private S3Client s3Client;
 	
-	@Value("aws.s3.bucket")
+	@Value("${aws.s3.bucket}")
 	private String bucketName;
 	
 	public int register(BoardDto board, MultipartFile[] files) {

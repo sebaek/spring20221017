@@ -18,6 +18,20 @@
 		<div class="row">
 			<div class="col">
 				<h1>회원가입</h1>
+				
+				<form action="" method="post">
+					아이디
+					<input type="text" name="id">
+					<br>
+					암호
+					<input type="text" name="password">
+					<br>
+					이메일
+					<input type="email" name="email">
+					<br>
+					<input type="submit" value="가입">
+				
+				</form>
 			</div>
 		</div>
 	</div>

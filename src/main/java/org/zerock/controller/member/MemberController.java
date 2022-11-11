@@ -57,6 +57,11 @@ public class MemberController {
 			return "redirect:/member/modify";
 		}
 	}
+	
+	@PostMapping("remove")
+	public String remove(String id) {
+		service.remove(id);
+	}
 }
 
 

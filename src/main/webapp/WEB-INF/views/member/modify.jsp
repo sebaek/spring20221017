@@ -34,6 +34,12 @@
 					가입일시 <input type="text" value="${member.inserted }" readonly> <br>
 					<input type="submit" value="수정">
 				</form>
+				
+				<c:url value="/member/remove" var="removeUrl" />
+				<form action="${removeUrl }" method="post">
+					<input type="hidden" name="name" value="${member.id }">
+					<input type="submit" value="탈퇴">
+				</form>
 			</div>
 		</div>
 	</div>

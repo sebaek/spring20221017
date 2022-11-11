@@ -68,12 +68,22 @@ public class MemberController {
 	}
 	
 	@PostMapping("remove")
-	public String remove(String id, RedirectAttributes rttr) {
-		int cnt = service.remove(id);
+	public String remove(String id, String oldPassword, RedirectAttributes rttr) {
+		MemberDto oldmember = service.getById(id);
 		
-		rttr.addFlashAttribute("message", "회원 탈퇴하였습니다.");
+		if (oldmember.getPassword().equals(oldPassword)) {
+			int cnt = service.remove(id);
+			
+			rttr.addFlashAttribute("message", "회원 탈퇴하였습니다.");
+			
+			return "redirect:/board/list";
+			
+		} else {
+			rttr.addAttribute("id", id);
+			rttr.addFlashAttribute("message", "암호가 일치하지 않습니다.");
+			return "redirect:/member/modify";
+		}
 		
-		return "redirect:/board/list";
 	}
 }
 

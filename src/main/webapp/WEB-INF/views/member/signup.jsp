@@ -56,7 +56,7 @@
 						
 						<div class="input-group">
 							<input class="form-control" type="email" name="email">
-							<button class="btn btn-outline-secondary">중복확인</button>
+							<button type="button" class="btn btn-outline-secondary">중복확인</button>
 						</div>
 						
 						<div class="form-text">확인 메시지....</div>

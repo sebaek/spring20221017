@@ -5,6 +5,18 @@
   
 <mapper namespace="org.zerock.mapper.member.MemberMapper">
 
+	<select id="selectAll" resultType="org.zerock.domain.member.MemberDto">
+	SELECT 
+		id,
+		'숨김' password,
+		email,
+		inserted
+	FROM
+		Member
+	ORDER BY
+		id 
+	</select>
+
 	<insert id="insert">
 	INSERT INTO Member (id, password, email)
 	VALUES (#{id}, #{password}, #{email})

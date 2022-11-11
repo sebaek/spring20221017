@@ -1,5 +1,7 @@
 package org.zerock.service.member;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.zerock.domain.member.MemberDto;
@@ -16,4 +18,15 @@ public class MemberService {
 		return mapper.insert(member);
 	}
 
+	public List<MemberDto> list() {
+		// TODO Auto-generated method stub
+		return mapper.selectAll();
+	}
+
 }
+
+
+
+
+
+

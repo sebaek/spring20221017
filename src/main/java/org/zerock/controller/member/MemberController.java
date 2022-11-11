@@ -59,8 +59,12 @@ public class MemberController {
 	}
 	
 	@PostMapping("remove")
-	public String remove(String id) {
-		service.remove(id);
+	public String remove(String id, RedirectAttributes rttr) {
+		int cnt = service.remove(id);
+		
+		rttr.addFlashAttribute("message", "회원 탈퇴하였습니다.");
+		
+		return "redirect:/board/list";
 	}
 }
 

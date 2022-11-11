@@ -5,6 +5,11 @@
   
 <mapper namespace="org.zerock.mapper.member.MemberMapper">
 
+	<delete id="deleteById">
+	DELETE FROM Member
+	WHERE id = #{id}
+	</delete>
+
 	<update id="update">
 	UPDATE Member
 	SET

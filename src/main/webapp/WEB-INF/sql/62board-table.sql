@@ -121,7 +121,7 @@ SELECT * FROM Member ORDER BY inserted DESC;
 
 SELECT 
 		id,
-		'숨김' password,
+		password,
 		email,
 		inserted
 	FROM

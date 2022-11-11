@@ -28,6 +28,18 @@ public class MemberService {
 		return mapper.selectById(id);
 	}
 
+	public int modify(MemberDto member) {
+		int cnt = 0;
+		
+		try {
+			return mapper.update(member);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return cnt; 
+	}
+
 }
 
 

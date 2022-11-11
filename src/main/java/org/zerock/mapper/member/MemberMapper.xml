@@ -5,6 +5,16 @@
   
 <mapper namespace="org.zerock.mapper.member.MemberMapper">
 
+	<update id="update">
+	UPDATE Member
+	SET
+		password = #{password},
+		email = #{email}
+	WHERE
+		id = #{id}
+	
+	</update>
+
 	<select id="selectById" resultType="org.zerock.domain.member.MemberDto">
 	SELECT 
 		id,

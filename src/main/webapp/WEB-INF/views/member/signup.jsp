@@ -46,7 +46,7 @@
 						<label for="" class="form-label">
 							암호 확인
 						</label>
-						<input class="form-control" type="password" name="password">
+						<input class="form-control" type="password">
 					</div>
 
 					<div class="mb-3">

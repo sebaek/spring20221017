@@ -38,6 +38,11 @@ public class MemberController {
 		model.addAttribute("memberList", service.list());
 	}
 	
+	@GetMapping("info")
+	public void info(String id, Model model) {
+		
+		model.addAttribute("member", service.getById(id));
+	}
 }
 
 

@@ -23,6 +23,11 @@ public class MemberService {
 		return mapper.selectAll();
 	}
 
+	public MemberDto getById(String id) {
+		// TODO Auto-generated method stub
+		return mapper.selectById(id);
+	}
+
 }
 
 

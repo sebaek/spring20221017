@@ -13,7 +13,7 @@
 <c:url value="/board/register" var="registerLink" />
 <c:url value="/member/signup" var="signupLink" />
 
-<nav class="navbar navbar-expand-md bg-light">
+<nav class="navbar navbar-expand-md bg-light mb-3">
   <div class="container-md">
     <a class="navbar-brand" href="${listLink }">게시판</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

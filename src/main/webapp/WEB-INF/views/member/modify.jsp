@@ -76,7 +76,7 @@
 					<input type="hidden" name="id" value="${member.id }">
 					<input type="hidden" name="oldPassword">
 				</form>
-				<input class="btn btn-warning" type="submit" value="수정" data-bs-toggle="modal" data-bs-target="#modifyModal">
+				<input disabled id="modifyModalButton1" class="btn btn-warning" type="submit" value="수정" data-bs-toggle="modal" data-bs-target="#modifyModal">
 				<input class="btn btn-danger" type="submit" value="탈퇴" data-bs-toggle="modal" data-bs-target="#removeModal">
 			</div>
 		</div>
@@ -123,6 +123,20 @@
 <script>
 const ctx = "${pageContext.request.contextPath}";
 
+let availablePassword = true;
+let availableEmail = true;
+
+function enableModifyButton() {
+	const button = document.querySelector("#modifyModalButton1");
+	if (availablePassword && availableEmail) {
+		// 수정버튼 활성화
+		button.removeAttribute("disabled")
+	} else {
+		// 수정버튼 비활성화
+		button.setAttribute("disabled", "");
+	}
+}
+
 <%-- 이메일 중복확인 --%>
 const emailInput1 = document.querySelector("#emailInput1");
 const emailButton1 = document.querySelector("#emailButton1");
@@ -130,6 +144,8 @@ const emailText1 = document.querySelector("#emailText1");
 
 // 이메일 중복확인 버튼 클릭하면
 emailButton1.addEventListener("click", function() {
+	availableEmail = false;
+	
 	const email = emailInput1.value;
 	
 	fetch(`\${ctx}/member/existEmail`, {
@@ -142,22 +158,32 @@ emailButton1.addEventListener("click", function() {
 		.then(res => res.json())
 		.then(data => {
 			emailText1.innerText = data.message;
+			
+			if (data.status == "not exist") {
+				availableEmail = true;
+			}
+			enableModifyButton();
 		});
 });
 
 // 이메일 input의 값이 변경되었을 때
 emailInput1.addEventListener("keyup", function() {
+	availableEmail = false;
+	
 	const oldValue = emailInput1.dataset.oldValue;
 	const newValue = emailInput1.value;
 	if (oldValue == newValue) {
 		// 기존 이메일과 같으면 아무일도 일어나지 않음
 		emailText1.innerText = "";
 		emailButton1.setAttribute("disabled", "disabled");
+		availableEmail = true;
 	} else {
 		// 기존 이메일과 다르면 중복체크 요청
 		emailText1.innerText = "이메일 중복확인을 해주세요.";
 		emailButton1.removeAttribute("disabled");
 	}
+	
+	enableModifyButton();
 });
 
 <%-- 암호 입력 일치하는지 확인 --%>
@@ -169,11 +195,14 @@ passwordInput1.addEventListener("keyup", matchPassword);
 passwordInput2.addEventListener("keyup", matchPassword);
 
 function matchPassword() {
+	availablePassword = false;
 	if (passwordInput1.value == passwordInput2.value) {
 		passwordText1.innerText = "패스워드가 일치 합니다.";
+		availablePassword = true;
 	} else {
 		passwordText1.innerText = "패스워드가 일치하지 않습니다.";
 	}
+	enableModifyButton();
 }
 
 <%-- 탈퇴 모달 확인 버튼 눌렀을 때 --%>

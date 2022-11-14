@@ -55,11 +55,11 @@
 						</label>
 						
 						<div class="input-group">
-							<input class="form-control" type="email" name="email">
-							<button type="button" class="btn btn-outline-secondary">중복확인</button>
+							<input id="emailInput1" class="form-control" type="email" name="email">
+							<button id="emailExistButton1" type="button" class="btn btn-outline-secondary">중복확인</button>
 						</div>
 						
-						<div class="form-text">확인 메시지....</div>
+						<div id="emailText1" class="form-text">이메일 중복확인을 해주세요.</div>
 					</div>
 
 					<input disabled class="btn btn-primary" type="submit" value="가입">
@@ -72,7 +72,18 @@
 
 <script>
 const ctx = "${pageContext.request.contextPath}";
+// 이메일 중복확인
+document.querySelector("#emailExistButton1").addEventListener("click", function() {
+	const email = document.querySelector("#emailInput1").value;
+	
+	fetch(`\${ctx}/member/existEmail/\${email}`)
+		.then(res => res.json())
+		.then(data => {
+			document.querySelector("#emailText1").innerText = data.message;
+		});
+});
 
+// 아이디 중복확인
 document.querySelector("#userIdExistButton1").addEventListener("click", function() {
 	// 입력된 userId를
 	const userId = document.querySelector("#userIdInput1").value;
@@ -84,10 +95,6 @@ document.querySelector("#userIdExistButton1").addEventListener("click", function
 			// 응답 받아서 메세지 출력
 			document.querySelector("#userIdText1").innerText = data.message;
 		}); 
-			
-	
-	
-	
 	
 });
 

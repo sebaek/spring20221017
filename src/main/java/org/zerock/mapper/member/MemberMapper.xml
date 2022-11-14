@@ -5,6 +5,18 @@
   
 <mapper namespace="org.zerock.mapper.member.MemberMapper">
 
+	<select id="selectByEmail" resultType="org.zerock.domain.member.MemberDto">
+	SELECT 
+		id,
+		password,
+		email,
+		inserted
+	FROM
+		Member
+	WHERE
+		email = #{email}
+	</select>
+
 	<delete id="deleteById">
 	DELETE FROM Member
 	WHERE id = #{id}
